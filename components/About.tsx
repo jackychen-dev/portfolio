@@ -5,15 +5,15 @@ import { motion } from 'framer-motion'
 const skillCategories = [
   {
     title: "Mechanical Engineering",
-    skills: ["System Design", "Rapid Prototyping", "SolidWorks", "Iterative Design", "FEA (COMSOL)", "CFD", "Injection Molding", "DFM/DFA", "GD&T", "Microfluidics", "Mechatronics"]
+    skills: ["System Design", "Rapid Prototyping", "SolidWorks", "Inventor", "Creo", "Iterative Design", "FEA (COMSOL)", "CFD", "Injection Molding", "DFM/DFA", "GD&T", "Microfluidics", "Mechatronics"]
   },
   {
     title: "Technical Program Management",
-    skills: ["Strategic Planning", "End-to-End Execution", "Cross-functional Leadership", "Risk Mitigation", "Agile & Scrum", "Stakeholder Alignment", "Vendor Management", "Resource Allocation", "KPI Tracking"]
+    skills: ["Strategic Planning", "End-to-End Execution", "Cross-functional Leadership", "Risk Mitigation", "Agile & Scrum", "Stakeholder Alignment", "Vendor Management", "Resource Allocation", "KPI Tracking", "Jira", "Smartsheet", "MS Project", "Custom Tool Development"]
   },
   {
     title: "Software & Analysis",
-    skills: ["Python", "MATLAB", "C/C++", "VBA", "Data Analysis", "Smartsheets", "Jira", "MS Project"]
+    skills: ["Python", "MATLAB", "C/C++", "VBA", "Data Analysis"]
   }
 ]
 
