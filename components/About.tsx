@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const skillCategories = [
   {
     title: "Mechanical Engineering",
-    skills: ["System Design", "Rapid Prototyping", "SolidWorks", "Inventor", "Creo", "Iterative Design", "FEA", "CFD (COMSOL)", "Injection Molding", "In-house Molding", "DFM/DFA", "GD&T", "Microfluidics", "Mechatronics"]
+    skills: ["System Design", "Rapid Prototyping", "3D Printing", "SolidWorks", "Inventor", "Creo", "Iterative Design", "FEA", "CFD (COMSOL)", "Injection Molding", "In-house Molding", "DFM/DFA", "GD&T", "Microfluidics", "Mechatronics"]
   },
   {
     title: "Technical Program Management",
