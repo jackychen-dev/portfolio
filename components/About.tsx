@@ -29,7 +29,7 @@ export default function About() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Technical Capabilities</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            A hybrid skillset combining engineering precision with strategic program leadership.
+            Technical expertise built from engineering fundamentals and end-to-end delivery experience
           </p>
         </motion.div>
 
