@@ -1,8 +1,9 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Calendar, MapPin, ArrowRight, Brain, Cpu, Battery, PenTool, GraduationCap } from 'lucide-react'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 const experiences = [
   {
@@ -85,8 +86,16 @@ const experiences = [
 ]
 
 export default function Experience() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  })
+
+  const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-black border-t border-gray-100 dark:border-neutral-900">
+    <section ref={sectionRef} id="experience" className="py-20 bg-white dark:bg-black border-t border-gray-100 dark:border-neutral-900">
       <div className="container mx-auto px-6">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -97,7 +106,14 @@ export default function Experience() {
           Work Experience
         </motion.h2>
 
-        <div className="max-w-4xl mx-auto space-y-12">
+        <div className="max-w-4xl mx-auto space-y-12 relative">
+          {/* Single timeline line with progress fill */}
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gray-400 dark:bg-neutral-600 shadow-sm">
+            <motion.div 
+              className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600 origin-top"
+              style={{ height: progressHeight }}
+            />
+          </div>
           {experiences.map((exp, index) => {
             const isTPM = exp.type === 'TPM';
             const isEducation = exp.type === 'Education';
@@ -214,9 +230,6 @@ export default function Experience() {
                 transition={{ delay: index * 0.1 }}
                 className="relative pl-8 md:pl-0"
               >
-                {/* Timeline line for desktop */}
-                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-0.5 bg-gray-400 dark:bg-neutral-600 -ml-6 md:ml-0 md:left-1/2 transform md:-translate-x-1/2 shadow-sm"></div>
-                
                 <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                   <div className="md:w-5/12 mb-4 md:mb-0"></div>
                   
