@@ -68,22 +68,22 @@ export default function Initiatives() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-black border-2 border-gray-300 dark:border-neutral-700 rounded-2xl p-8 hover:border-blue-500 transition-colors h-full flex flex-col shadow-sm hover:shadow-lg"
+                className="bg-white dark:bg-black border-2 border-gray-300 dark:border-neutral-700 rounded-2xl p-8 group-hover:border-blue-500 transition-all duration-300 h-full flex flex-col shadow-sm group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:scale-[1.02]"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <span className="text-blue-600 text-xs font-bold tracking-widest uppercase">{project.category}</span>
                     <h3 className="text-2xl font-bold mt-2 group-hover:text-blue-600 transition-colors">{project.title}</h3>
                   </div>
-                  <ArrowRight className="text-gray-300 group-hover:text-blue-500 transition-colors opacity-0 group-hover:opacity-100" size={24} />
                 </div>
                 
                 <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed flex-grow">
                   {project.description}
                 </p>
                 
-                <div className="mt-auto text-blue-600 text-sm font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  View Project Details <ArrowRight size={14} className="ml-1" />
+                <div className="mt-auto text-blue-600 text-sm font-medium flex items-center pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <span>Click here for project details</span>
+                  <ArrowRight size={14} className="ml-2" />
                 </div>
               </motion.div>
             </Link>
