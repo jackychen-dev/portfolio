@@ -180,15 +180,7 @@ export default function EnvestPage() {
 
         {/* 4. Sensor Housing & Manufacturing */}
         <section className="grid md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-5 order-2 md:order-1 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-square overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg">
-             <Image 
-               src="/en_4.jpg" 
-               alt="Sensor Housing Prototype"
-               fill
-               className="object-contain p-4"
-             />
-          </div>
-          <div className="md:col-span-7 order-1 md:order-2">
+          <div className="md:col-span-7">
             <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
               <Wifi className="text-purple-600" /> Sensor Housing Design
             </h2>
@@ -203,6 +195,14 @@ export default function EnvestPage() {
                 <li><strong>Sourcing:</strong> Establishing supply chain channels for mass production.</li>
               </ol>
             </div>
+          </div>
+          <div className="md:col-span-5 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-square overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg">
+             <Image 
+               src="/en_4.jpg" 
+               alt="Sensor Housing Prototype"
+               fill
+               className="object-contain p-4"
+             />
           </div>
         </section>
 
