@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Calendar, MapPin, ArrowRight, Brain, Cpu, Battery, PenTool, GraduationCap } from 'lucide-react'
 import Link from 'next/link'
 import { useRef } from 'react'
@@ -85,107 +85,6 @@ const experiences = [
   }
 ]
 
-interface ExperienceCardProps {
-  exp: typeof experiences[0]
-  index: number
-  isTPM: boolean
-  isEducation: boolean
-  accentColor: string
-  bgColor: string
-  borderColor: string
-  dotColor: string
-}
-
-function ExperienceCard({ exp, index, isTPM, isEducation, accentColor, bgColor, borderColor, dotColor }: ExperienceCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(cardRef, { 
-    once: true, 
-    margin: "-100px" 
-  })
-
-  const CardContent = (
-    <div className={`relative p-6 rounded-2xl transition-all duration-300 border ${isTPM ? 'border-blue-100 dark:border-blue-900/30' : isEducation ? 'border-purple-100 dark:border-purple-900/30' : 'border-emerald-100 dark:border-emerald-900/30'} hover:shadow-lg hover:-translate-y-1 ${bgColor} ${borderColor}`}>
-      
-      {/* Role Badge */}
-      <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm bg-white dark:bg-neutral-800 ${accentColor}`}>
-        {exp.type}
-      </div>
-
-      <div className="flex justify-between items-start mb-1">
-        <div className="flex items-center gap-3">
-          <div className={`p-2 rounded-lg bg-white dark:bg-black shadow-sm ${accentColor}`}>
-            {exp.icon}
-          </div>
-          <h3 className={`text-xl font-bold ${accentColor}`}>{exp.company}</h3>
-        </div>
-      </div>
-      
-      <h4 className="text-lg font-semibold mt-3 mb-2">{exp.role}</h4>
-      
-      <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
-        <div className="flex items-center gap-1">
-          <Calendar size={14} />
-          <span>{exp.period}</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <MapPin size={14} />
-          <span>{exp.location}</span>
-        </div>
-      </div>
-
-      <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 italic">
-        {exp.summary}
-      </p>
-      
-      {!isEducation && (
-        <div className={`flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity ${accentColor}`}>
-          Deep Dive <ArrowRight size={16} className="ml-1" />
-        </div>
-      )}
-    </div>
-  )
-
-  return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="relative pl-8 md:pl-0"
-    >
-      <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-        <div className="md:w-5/12 mb-4 md:mb-0"></div>
-        
-        {/* Timeline dot with animated outline */}
-        <div className="absolute left-[-5px] md:left-1/2 md:-ml-1.5 mt-1.5 md:mt-0 flex items-center justify-center">
-          {/* Outline circle */}
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className={`absolute w-6 h-6 rounded-full border-2 ${isTPM ? 'border-blue-500' : isEducation ? 'border-purple-500' : 'border-emerald-500'}`}
-          />
-          {/* Dot */}
-          <div className={`relative w-3 h-3 rounded-full ring-4 ring-white dark:ring-black ${dotColor}`}></div>
-        </div>
-
-        <div className="md:w-5/12">
-          {isEducation ? (
-            <div className="block group cursor-default">
-              {CardContent}
-            </div>
-          ) : (
-            <Link href={`/experience/${exp.id}`} className="block group">
-              {CardContent}
-            </Link>
-          )}
-        </div>
-      </div>
-    </motion.div>
-  )
-}
-
 export default function Experience() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -236,18 +135,76 @@ export default function Experience() {
               dotColor = 'bg-purple-600';
             }
 
+            const CardContent = (
+              <div className={`relative p-6 rounded-2xl transition-all duration-300 border ${isTPM ? 'border-blue-100 dark:border-blue-900/30' : isEducation ? 'border-purple-100 dark:border-purple-900/30' : 'border-emerald-100 dark:border-emerald-900/30'} hover:shadow-lg hover:-translate-y-1 ${bgColor} ${borderColor}`}>
+                
+                {/* Role Badge */}
+                <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm bg-white dark:bg-neutral-800 ${accentColor}`}>
+                  {exp.type}
+                </div>
+
+                <div className="flex justify-between items-start mb-1">
+                  <div className="flex items-center gap-3">
+                    <div className={`p-2 rounded-lg bg-white dark:bg-black shadow-sm ${accentColor}`}>
+                      {exp.icon}
+                    </div>
+                    <h3 className={`text-xl font-bold ${accentColor}`}>{exp.company}</h3>
+                  </div>
+                </div>
+                
+                <h4 className="text-lg font-semibold mt-3 mb-2">{exp.role}</h4>
+                
+                <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Calendar size={14} />
+                    <span>{exp.period}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MapPin size={14} />
+                    <span>{exp.location}</span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 italic">
+                  {exp.summary}
+                </p>
+                
+                {!isEducation && (
+                  <div className={`flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity ${accentColor}`}>
+                    Deep Dive <ArrowRight size={16} className="ml-1" />
+                  </div>
+                )}
+              </div>
+            );
+
             return (
-              <ExperienceCard
+              <motion.div
                 key={index}
-                exp={exp}
-                index={index}
-                isTPM={isTPM}
-                isEducation={isEducation}
-                accentColor={accentColor}
-                bgColor={bgColor}
-                borderColor={borderColor}
-                dotColor={dotColor}
-              />
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="relative pl-8 md:pl-0"
+              >
+                <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                  <div className="md:w-5/12 mb-4 md:mb-0"></div>
+                  
+                  {/* Timeline dot */}
+                  <div className={`absolute left-[-5px] md:left-1/2 md:-ml-1.5 w-3 h-3 rounded-full mt-1.5 md:mt-0 ring-4 ring-white dark:ring-black ${dotColor}`}></div>
+
+                  <div className="md:w-5/12">
+                    {isEducation ? (
+                      <div className="block group cursor-default">
+                        {CardContent}
+                      </div>
+                    ) : (
+                      <Link href={`/experience/${exp.id}`} className="block group">
+                        {CardContent}
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
             );
           })}
         </div>
