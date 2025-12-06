@@ -167,7 +167,7 @@ export default function EnvestPage() {
                src="/en_4.jpg" 
                alt="Sheet Metal Bracket"
                fill
-               className="object-contain p-4"
+               className="object-contain px-4 py-2"
              />
           </div>
           <div className="md:col-span-7">
