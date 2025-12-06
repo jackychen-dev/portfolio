@@ -46,7 +46,7 @@ export default function About() {
               <h3 className="text-xl font-bold mb-6 text-blue-600">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gray-100 dark:bg-neutral-800 rounded-lg text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 cursor-default">
+                  <span key={skill} className="px-3 py-1.5 bg-gray-100 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-200 cursor-default">
                     {skill}
                   </span>
                 ))}
