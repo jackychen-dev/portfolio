@@ -215,7 +215,7 @@ export default function Experience() {
                 className="relative pl-8 md:pl-0"
               >
                 {/* Timeline line for desktop */}
-                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-px bg-gray-200 dark:bg-neutral-800 -ml-6 md:ml-0 md:left-1/2 transform md:-translate-x-1/2"></div>
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-0.5 bg-gray-400 dark:bg-neutral-600 -ml-6 md:ml-0 md:left-1/2 transform md:-translate-x-1/2 shadow-sm"></div>
                 
                 <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                   <div className="md:w-5/12 mb-4 md:mb-0"></div>
