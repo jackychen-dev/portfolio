@@ -178,7 +178,7 @@ export default function EnvestPage() {
               </p>
             </div>
           </div>
-          <div className="md:col-span-5 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-square overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg">
+          <div className="md:col-span-5 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-[4/3] overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg self-start -mt-4">
              <Image 
                src="/en_4.jpg" 
                alt="Sheet Metal Bracket"
