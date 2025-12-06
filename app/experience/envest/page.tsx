@@ -87,7 +87,7 @@ export default function EnvestPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0" />
-                    <span><strong>Drivetrain Design:</strong> Designed and iteratively prototyped the electromechanical drivetrain to achieve smooth, automated adjustment.</span>
+                    <span><strong>Drivetrain Design:</strong> Designed and iteratively prototyped the electromechanical drivetrain to achieve smooth, automated adjustment. The system utilized a single motor to drive five independent actuations through a ball bearing locking mechanism, which required extensive iterative prototyping to optimize the geometry for reliable engagement and disengagement.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 flex-shrink-0" />
