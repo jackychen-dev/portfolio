@@ -121,13 +121,10 @@ export default function Experience() {
 
             // If it's education, we might not want a deep dive link, so we conditionally render the link wrapper
             const CardContent = (
-              <div className={`relative p-6 rounded-2xl transition-all duration-300 border-2 ${isTPM ? 'border-blue-200 dark:border-blue-800' : isEducation ? 'border-purple-200 dark:border-purple-800' : 'border-emerald-200 dark:border-emerald-800'} hover:shadow-xl hover:-translate-y-1 ${bgColor} ${borderColor} group`}>
-                
-                {/* Gradient accent bar */}
-                <div className={`absolute top-0 left-0 right-0 h-1 ${isTPM ? 'bg-gradient-to-r from-blue-600 to-blue-400' : isEducation ? 'bg-gradient-to-r from-purple-600 to-purple-400' : 'bg-gradient-to-r from-emerald-600 to-emerald-400'} opacity-60 group-hover:opacity-100 transition-opacity duration-300`}></div>
+              <div className={`relative p-6 rounded-2xl transition-all duration-300 border border-transparent hover:shadow-lg hover:-translate-y-1 ${bgColor} ${borderColor}`}>
                 
                 {/* Role Badge */}
-                <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md bg-white dark:bg-neutral-800 border-2 ${isTPM ? 'border-blue-300 dark:border-blue-700' : isEducation ? 'border-purple-300 dark:border-purple-700' : 'border-emerald-300 dark:border-emerald-700'} ${accentColor}`}>
+                <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm bg-white dark:bg-neutral-800 ${accentColor}`}>
                   {exp.type}
                 </div>
 
