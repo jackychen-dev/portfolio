@@ -89,7 +89,7 @@ export default function Navbar() {
           <Link href="/#contact" className="hover:text-blue-600 transition-colors font-medium">Contact</Link>
           
           {/* Dark Mode Toggle */}
-          {mounted && (
+          {mounted ? (
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
@@ -101,11 +101,15 @@ export default function Navbar() {
                 <Moon size={20} className="text-gray-700 dark:text-gray-300" />
               )}
             </button>
+          ) : (
+            <div className="p-2 rounded-lg">
+              <Moon size={20} className="text-gray-700" />
+            </div>
           )}
         </div>
         
         {/* Mobile menu with dark mode toggle */}
-        {mounted && (
+        {mounted ? (
           <div className="md:hidden flex items-center gap-4">
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -118,6 +122,10 @@ export default function Navbar() {
                 <Moon size={20} className="text-gray-700 dark:text-gray-300" />
               )}
             </button>
+          </div>
+        ) : (
+          <div className="md:hidden p-2 rounded-lg">
+            <Moon size={20} className="text-gray-700" />
           </div>
         )}
       </div>
