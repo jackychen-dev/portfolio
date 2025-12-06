@@ -41,7 +41,7 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white dark:bg-black p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-md transition-shadow"
             >
               <h3 className="text-xl font-bold mb-6 text-blue-600">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
