@@ -136,7 +136,7 @@ export default function Experience() {
             }
 
             const CardContent = (
-              <div className={`relative p-6 rounded-2xl transition-all duration-300 border ${isTPM ? 'border-blue-100 dark:border-blue-900/30' : isEducation ? 'border-purple-100 dark:border-purple-900/30' : 'border-emerald-100 dark:border-emerald-900/30'} hover:shadow-xl hover:-translate-y-1 ${bgColor} ${borderColor}`}>
+              <div className={`relative p-6 rounded-2xl transition-all duration-300 border-2 ${isTPM ? 'border-blue-200 dark:border-blue-800/50' : isEducation ? 'border-purple-200 dark:border-purple-800/50' : 'border-emerald-200 dark:border-emerald-800/50'} hover:shadow-xl hover:-translate-y-1 ${bgColor} ${borderColor}`}>
                 
                 {/* Role Badge */}
                 <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md bg-white dark:bg-neutral-800 ${accentColor} border border-gray-200 dark:border-neutral-700`}>

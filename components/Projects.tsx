@@ -68,7 +68,7 @@ export default function Initiatives() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-black border border-gray-100 dark:border-neutral-800 rounded-2xl p-8 hover:border-blue-500 transition-colors h-full flex flex-col shadow-sm hover:shadow-lg"
+                className="bg-white dark:bg-black border-2 border-gray-300 dark:border-neutral-700 rounded-2xl p-8 hover:border-blue-500 transition-colors h-full flex flex-col shadow-sm hover:shadow-lg"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
