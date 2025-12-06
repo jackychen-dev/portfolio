@@ -31,21 +31,21 @@ export default function Contact() {
           viewport={{ once: true }}
           className="flex justify-center gap-8"
         >
-          <a href="mailto:jackychen273@gmail.com" className="flex flex-col items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
-            <div className="p-4 bg-white dark:bg-neutral-800 rounded-full shadow-md">
+          <a href="mailto:jackychen273@gmail.com" className="flex flex-col items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group">
+            <div className="p-4 bg-white dark:bg-neutral-800 rounded-full shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
               <Mail size={32} />
             </div>
             <div className="flex flex-col items-center">
               <span className="font-medium">Email Me</span>
-              <span className="text-sm text-gray-500">jackychen273@gmail.com</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">jackychen273@gmail.com</span>
             </div>
           </a>
           
-          <a href="https://www.linkedin.com/in/jchenl/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
-            <div className="p-4 bg-white dark:bg-neutral-800 rounded-full shadow-md">
+          <a href="https://www.linkedin.com/in/jchenl/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group">
+            <div className="p-4 bg-white dark:bg-neutral-800 rounded-full shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
               <Linkedin size={32} />
             </div>
-            <span>LinkedIn</span>
+            <span className="font-medium">LinkedIn</span>
           </a>
         </motion.div>
       </div>

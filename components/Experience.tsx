@@ -136,16 +136,16 @@ export default function Experience() {
             }
 
             const CardContent = (
-              <div className={`relative p-6 rounded-2xl transition-all duration-300 border ${isTPM ? 'border-blue-100 dark:border-blue-900/30' : isEducation ? 'border-purple-100 dark:border-purple-900/30' : 'border-emerald-100 dark:border-emerald-900/30'} hover:shadow-lg hover:-translate-y-1 ${bgColor} ${borderColor}`}>
+              <div className={`relative p-6 rounded-2xl transition-all duration-300 border ${isTPM ? 'border-blue-100 dark:border-blue-900/30' : isEducation ? 'border-purple-100 dark:border-purple-900/30' : 'border-emerald-100 dark:border-emerald-900/30'} hover:shadow-xl hover:-translate-y-1 ${bgColor} ${borderColor}`}>
                 
                 {/* Role Badge */}
-                <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm bg-white dark:bg-neutral-800 ${accentColor}`}>
+                <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md bg-white dark:bg-neutral-800 ${accentColor} border border-gray-200 dark:border-neutral-700`}>
                   {exp.type}
                 </div>
 
                 <div className="flex justify-between items-start mb-1">
                   <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg bg-white dark:bg-black shadow-sm ${accentColor}`}>
+                    <div className={`p-2.5 rounded-lg bg-white dark:bg-black shadow-md ${accentColor} group-hover:scale-110 transition-transform duration-300`}>
                       {exp.icon}
                     </div>
                     <h3 className={`text-xl font-bold ${accentColor}`}>{exp.company}</h3>
