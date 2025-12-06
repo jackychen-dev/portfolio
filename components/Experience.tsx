@@ -95,7 +95,7 @@ export default function Experience() {
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-white dark:bg-black border-t border-gray-100 dark:border-neutral-900">
+    <section ref={sectionRef} id="experience" className="py-20 bg-white dark:bg-neutral-900 border-t border-gray-200 dark:border-neutral-800">
       <div className="container mx-auto px-6">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}

@@ -19,7 +19,7 @@ const skillCategories = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-neutral-900">
+    <section id="about" className="py-20 bg-gray-100 dark:bg-neutral-950">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
