@@ -43,14 +43,7 @@ export default function About() {
               transition={{ delay: index * 0.1 }}
               className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
-              <h3 className="text-xl font-bold mb-6 text-blue-600">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span key={skill} className="px-3 py-1.5 bg-gray-100 dark:bg-neutral-800 rounded-lg text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 cursor-default">
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h3 className="text-xl font-bold text-blue-600">{category.title}</h3>
             </motion.div>
           ))}
         </div>
