@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useInView } from 'framer-motion'
 import { Calendar, MapPin, ArrowRight, Brain, Cpu, Battery, PenTool, GraduationCap } from 'lucide-react'
 import Link from 'next/link'
 import { useRef } from 'react'
@@ -85,6 +85,107 @@ const experiences = [
   }
 ]
 
+interface ExperienceCardProps {
+  exp: typeof experiences[0]
+  index: number
+  isTPM: boolean
+  isEducation: boolean
+  accentColor: string
+  bgColor: string
+  borderColor: string
+  dotColor: string
+}
+
+function ExperienceCard({ exp, index, isTPM, isEducation, accentColor, bgColor, borderColor, dotColor }: ExperienceCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(cardRef, { 
+    once: true, 
+    margin: "-100px" 
+  })
+
+  const CardContent = (
+    <div className={`relative p-6 rounded-2xl transition-all duration-300 border ${isTPM ? 'border-blue-100 dark:border-blue-900/30' : isEducation ? 'border-purple-100 dark:border-purple-900/30' : 'border-emerald-100 dark:border-emerald-900/30'} hover:shadow-lg hover:-translate-y-1 ${bgColor} ${borderColor}`}>
+      
+      {/* Role Badge */}
+      <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm bg-white dark:bg-neutral-800 ${accentColor}`}>
+        {exp.type}
+      </div>
+
+      <div className="flex justify-between items-start mb-1">
+        <div className="flex items-center gap-3">
+          <div className={`p-2 rounded-lg bg-white dark:bg-black shadow-sm ${accentColor}`}>
+            {exp.icon}
+          </div>
+          <h3 className={`text-xl font-bold ${accentColor}`}>{exp.company}</h3>
+        </div>
+      </div>
+      
+      <h4 className="text-lg font-semibold mt-3 mb-2">{exp.role}</h4>
+      
+      <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+        <div className="flex items-center gap-1">
+          <Calendar size={14} />
+          <span>{exp.period}</span>
+        </div>
+        <div className="flex items-center gap-1">
+          <MapPin size={14} />
+          <span>{exp.location}</span>
+        </div>
+      </div>
+
+      <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 italic">
+        {exp.summary}
+      </p>
+      
+      {!isEducation && (
+        <div className={`flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity ${accentColor}`}>
+          Deep Dive <ArrowRight size={16} className="ml-1" />
+        </div>
+      )}
+    </div>
+  )
+
+  return (
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="relative pl-8 md:pl-0"
+    >
+      <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+        <div className="md:w-5/12 mb-4 md:mb-0"></div>
+        
+        {/* Timeline dot with animated outline */}
+        <div className="absolute left-[-5px] md:left-1/2 md:-ml-1.5 mt-1.5 md:mt-0 flex items-center justify-center">
+          {/* Outline circle */}
+          <motion.div
+            initial={{ scale: 0, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className={`absolute w-6 h-6 rounded-full border-2 ${isTPM ? 'border-blue-500' : isEducation ? 'border-purple-500' : 'border-emerald-500'}`}
+          />
+          {/* Dot */}
+          <div className={`relative w-3 h-3 rounded-full ring-4 ring-white dark:ring-black ${dotColor}`}></div>
+        </div>
+
+        <div className="md:w-5/12">
+          {isEducation ? (
+            <div className="block group cursor-default">
+              {CardContent}
+            </div>
+          ) : (
+            <Link href={`/experience/${exp.id}`} className="block group">
+              {CardContent}
+            </Link>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export default function Experience() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -135,122 +236,18 @@ export default function Experience() {
               dotColor = 'bg-purple-600';
             }
 
-            // If it's education, we might not want a deep dive link, so we conditionally render the link wrapper
-            const CardContent = (
-              <div className={`relative p-6 rounded-2xl transition-all duration-300 border ${isTPM ? 'border-blue-100 dark:border-blue-900/30' : isEducation ? 'border-purple-100 dark:border-purple-900/30' : 'border-emerald-100 dark:border-emerald-900/30'} hover:shadow-lg hover:-translate-y-1 ${bgColor} ${borderColor}`}>
-                
-                {/* Role Badge */}
-                <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm bg-white dark:bg-neutral-800 ${accentColor}`}>
-                  {exp.type}
-                </div>
-
-                <div className="flex justify-between items-start mb-1">
-                  <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg bg-white dark:bg-black shadow-sm ${accentColor}`}>
-                      {exp.icon}
-                    </div>
-                    <h3 className={`text-xl font-bold ${accentColor}`}>{exp.company}</h3>
-                  </div>
-                </div>
-                
-                <h4 className="text-lg font-semibold mt-3 mb-2">{exp.role}</h4>
-                
-                <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Calendar size={14} />
-                    <span>{exp.period}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <MapPin size={14} />
-                    <span>{exp.location}</span>
-                  </div>
-                </div>
-
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 italic">
-                  {exp.summary}
-                </p>
-
-                {/* Display detailed description bullet points if available (mainly for this expanded view request) */}
-                {/* Actually, the current design only shows summary and links to deep dive. 
-                    The user asked to "incorporate this into the eclipse tpm section emphasize more to come".
-                    Since there is no deep dive page for Eclipse yet (it's a placeholder), 
-                    I should probably display these bullets here or update the placeholder page?
-                    
-                    The query says "incorporate this into the eclipse tpm section".
-                    In the snippet above, I updated the 'summary' and 'description' data fields.
-                    However, the current rendering only shows {exp.summary}.
-                    
-                    If the user wants these details visible on the main page, I need to render {exp.description}.
-                    But the design pattern so far has been Summary -> Deep Dive.
-                    
-                    Wait, the user said "emphasize more to come".
-                    If I put it in the description data, it won't show up unless I change the rendering logic below.
-                    The previous code did NOT render `description` in the card.
-                    
-                    I will stick to the pattern: Summary is visible. Deep dive has details.
-                    BUT, Eclipse is a "current" role and maybe they want the details visible immediately?
-                    Or maybe they want me to populate the deep dive page?
-                    
-                    "incorporate this into the eclipse tpm section" usually refers to the resume/content.
-                    "emphasize more to come" implies future updates.
-                    
-                    If I only update the `description` array, it won't be seen on the main page.
-                    However, fitting all those bullets into the card summary on the main page would make it huge.
-                    
-                    The prompt implies "incorporate this into the eclipse tpm section".
-                    I will put the main "Drove cross-functional execution..." in the summary.
-                    I will put the bullet points in the `description` field.
-                    AND I will create/update the Eclipse deep dive page (`app/experience/eclipse/page.tsx`) to actually show this content, 
-                    OR I will modify the card to show a bit more if that's what's implied.
-                    
-                    Given "More to come", maybe I should just update the Summary to be the first paragraph, 
-                    and then ensuring the "Deep Dive" link works and shows the bullets.
-                    
-                    Let's check if `app/experience/eclipse/page.tsx` exists.
-                    Yes, it was created as a placeholder in a previous step ("Create placeholder pages for other roles").
-                    
-                    I will update the `components/Experience.tsx` data as requested (which I did in the write call content).
-                    And I will ALSO update `app/experience/eclipse/page.tsx` to display this content, so the "Deep Dive" link is functional and meaningful.
-                */}
-                
-                {!isEducation && (
-                  <div className={`flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity ${accentColor}`}>
-                    Deep Dive <ArrowRight size={16} className="ml-1" />
-                  </div>
-                )}
-              </div>
-            );
-
             return (
-              <motion.div
+              <ExperienceCard
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative pl-8 md:pl-0"
-              >
-                <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                  <div className="md:w-5/12 mb-4 md:mb-0"></div>
-                  
-                  {/* Timeline dot */}
-                  <div className={`absolute left-[-5px] md:left-1/2 md:-ml-1.5 w-3 h-3 rounded-full mt-1.5 md:mt-0 ring-4 ring-white dark:ring-black ${dotColor}`}></div>
-
-                  <div className="md:w-5/12">
-                    {isEducation ? (
-                      // Non-clickable div for education
-                      <div className="block group cursor-default">
-                        {CardContent}
-                      </div>
-                    ) : (
-                      // Link for work experience
-                      <Link href={`/experience/${exp.id}`} className="block group">
-                        {CardContent}
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
+                exp={exp}
+                index={index}
+                isTPM={isTPM}
+                isEducation={isEducation}
+                accentColor={accentColor}
+                bgColor={bgColor}
+                borderColor={borderColor}
+                dotColor={dotColor}
+              />
             );
           })}
         </div>
