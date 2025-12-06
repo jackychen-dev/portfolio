@@ -92,18 +92,25 @@ export default function Navbar() {
           {mounted ? (
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors font-medium text-sm"
               aria-label="Toggle dark mode"
             >
               {theme === 'dark' ? (
-                <Sun size={20} className="text-gray-700 dark:text-gray-300" />
+                <>
+                  <Sun size={18} className="text-gray-700 dark:text-gray-300" />
+                  <span className="text-gray-700 dark:text-gray-300">Light</span>
+                </>
               ) : (
-                <Moon size={20} className="text-gray-700 dark:text-gray-300" />
+                <>
+                  <Moon size={18} className="text-gray-700 dark:text-gray-300" />
+                  <span className="text-gray-700 dark:text-gray-300">Dark</span>
+                </>
               )}
             </button>
           ) : (
-            <div className="p-2 rounded-lg">
-              <Moon size={20} className="text-gray-700" />
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg">
+              <Moon size={18} className="text-gray-700" />
+              <span className="text-gray-700 text-sm font-medium">Dark</span>
             </div>
           )}
         </div>
@@ -113,19 +120,26 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-4">
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors font-medium text-sm"
               aria-label="Toggle dark mode"
             >
               {theme === 'dark' ? (
-                <Sun size={20} className="text-gray-700 dark:text-gray-300" />
+                <>
+                  <Sun size={18} className="text-gray-700 dark:text-gray-300" />
+                  <span className="text-gray-700 dark:text-gray-300">Light</span>
+                </>
               ) : (
-                <Moon size={20} className="text-gray-700 dark:text-gray-300" />
+                <>
+                  <Moon size={18} className="text-gray-700 dark:text-gray-300" />
+                  <span className="text-gray-700 dark:text-gray-300">Dark</span>
+                </>
               )}
             </button>
           </div>
         ) : (
-          <div className="md:hidden p-2 rounded-lg">
-            <Moon size={20} className="text-gray-700" />
+          <div className="md:hidden flex items-center gap-2 px-3 py-2 rounded-lg">
+            <Moon size={18} className="text-gray-700" />
+            <span className="text-gray-700 text-sm font-medium">Dark</span>
           </div>
         )}
       </div>
