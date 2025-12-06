@@ -162,6 +162,14 @@ export default function EnvestPage() {
 
         {/* 3. Sheet Metal & Materials */}
         <section className="grid md:grid-cols-12 gap-12 items-start">
+          <div className="md:col-span-5 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-[4/3] overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg self-start -mt-4">
+             <Image 
+               src="/en_4.jpg" 
+               alt="Sheet Metal Bracket"
+               fill
+               className="object-contain p-4"
+             />
+          </div>
           <div className="md:col-span-7">
             <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
               <Wrench className="text-orange-500" /> Sheet Metal & Material Science
@@ -177,14 +185,6 @@ export default function EnvestPage() {
                 <strong>The Solution:</strong> I performed a root cause analysis and redesigned the bracket geometry to better distribute stress. Additionally, I researched and specified higher-grade steels and strain hardening methods. By leveraging material properties (work hardening) alongside geometric improvements, I eliminated the deformation issue and extended the component's fatigue life.
               </p>
             </div>
-          </div>
-          <div className="md:col-span-5 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-[4/3] overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg self-start -mt-4">
-             <Image 
-               src="/en_4.jpg" 
-               alt="Sheet Metal Bracket"
-               fill
-               className="object-contain p-4"
-             />
           </div>
         </section>
 
