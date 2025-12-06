@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle2, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 const projects = [
@@ -82,16 +82,7 @@ export default function Initiatives() {
                   {project.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="flex items-center gap-1 px-3 py-1 bg-gray-100 dark:bg-neutral-800 text-sm rounded-full text-gray-700 dark:text-gray-300">
-                      <CheckCircle2 size={12} className="text-blue-500" />
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="mt-6 text-blue-600 text-sm font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-auto text-blue-600 text-sm font-medium flex items-center opacity-0 group-hover:opacity-100 transition-opacity">
                   View Project Details <ArrowRight size={14} className="ml-1" />
                 </div>
               </motion.div>
