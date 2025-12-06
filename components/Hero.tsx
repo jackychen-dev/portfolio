@@ -45,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto"
         >
-          Hardware Engineer turned TPM. I lead hardware, systems, and product programs from concept to delivery.
+          Mechanical Engineer turned TPM. I lead hardware, systems, and product programs from concept to delivery.
         </motion.p>
 
         <motion.div
@@ -71,3 +71,5 @@ export default function Hero() {
     </section>
   )
 }
+
+
