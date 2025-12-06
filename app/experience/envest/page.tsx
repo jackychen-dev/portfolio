@@ -160,49 +160,49 @@ export default function EnvestPage() {
           </div>
         </section>
 
-        {/* 3. Sensor Housing & Manufacturing */}
+        {/* 3. Sheet Metal & Materials */}
         <section className="max-w-4xl">
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <Wifi className="text-purple-600" /> Sensor Housing Design
+            <Wrench className="text-orange-500" /> Sheet Metal & Material Science
           </h2>
           <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
             <p>
-              I led the design of sensor enclosures for hardware clients like <strong>Mero Technologies</strong>. This process followed a rigorous development cycle:
+              Beyond plastic enclosures, I designed structural brackets which introduced me to the nuances of <strong>sheet metal fabrication</strong>.
             </p>
-            <ol className="list-decimal pl-5 space-y-2 marker:text-purple-600 marker:font-bold">
-              <li><strong>Rapid Prototyping:</strong> Initial design and 3D printing (FDM/SLA) to verify form, fit, and function.</li>
-              <li><strong>Client Validation:</strong> Shipping physical prototypes to clients for field testing and feedback.</li>
-              <li><strong>Design for Manufacturing (DFM):</strong> Converting the validated prototype into an injection-moldable design, including draft angles, wall thickness optimization, and boss design.</li>
-              <li><strong>Sourcing:</strong> Establishing supply chain channels for mass production.</li>
-            </ol>
+            <p>
+              <strong>The Challenge:</strong> One critical bracket was experiencing plastic deformation after repeated cycling in the field.
+            </p>
+            <p>
+              <strong>The Solution:</strong> I performed a root cause analysis and redesigned the bracket geometry to better distribute stress. Additionally, I researched and specified higher-grade steels and strain hardening methods. By leveraging material properties (work hardening) alongside geometric improvements, I eliminated the deformation issue and extended the component's fatigue life.
+            </p>
           </div>
         </section>
 
-        {/* 4. Sheet Metal & Materials */}
+        {/* 4. Sensor Housing & Manufacturing */}
         <section className="grid md:grid-cols-12 gap-12 items-start">
-          <div className="md:col-span-7">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-              <Wrench className="text-orange-500" /> Sheet Metal & Material Science
-            </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
-              <p>
-                Beyond plastic enclosures, I designed structural brackets which introduced me to the nuances of <strong>sheet metal fabrication</strong>.
-              </p>
-              <p>
-                <strong>The Challenge:</strong> One critical bracket was experiencing plastic deformation after repeated cycling in the field.
-              </p>
-              <p>
-                <strong>The Solution:</strong> I performed a root cause analysis and redesigned the bracket geometry to better distribute stress. Additionally, I researched and specified higher-grade steels and strain hardening methods. By leveraging material properties (work hardening) alongside geometric improvements, I eliminated the deformation issue and extended the component's fatigue life.
-              </p>
-            </div>
-          </div>
-          <div className="md:col-span-5 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-square overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg">
+          <div className="md:col-span-5 order-2 md:order-1 relative bg-gray-100 dark:bg-neutral-900 rounded-2xl aspect-square overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg">
              <Image 
                src="/en_4.jpg" 
-               alt="Sheet Metal Bracket"
+               alt="Sensor Housing Prototype"
                fill
                className="object-contain p-4"
              />
+          </div>
+          <div className="md:col-span-7 order-1 md:order-2">
+            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+              <Wifi className="text-purple-600" /> Sensor Housing Design
+            </h2>
+            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+              <p>
+                I led the design of sensor enclosures for hardware clients like <strong>Mero Technologies</strong>. This process followed a rigorous development cycle:
+              </p>
+              <ol className="list-decimal pl-5 space-y-2 marker:text-purple-600 marker:font-bold">
+                <li><strong>Rapid Prototyping:</strong> Initial design and 3D printing (FDM/SLA) to verify form, fit, and function.</li>
+                <li><strong>Client Validation:</strong> Shipping physical prototypes to clients for field testing and feedback.</li>
+                <li><strong>Design for Manufacturing (DFM):</strong> Converting the validated prototype into an injection-moldable design, including draft angles, wall thickness optimization, and boss design.</li>
+                <li><strong>Sourcing:</strong> Establishing supply chain channels for mass production.</li>
+              </ol>
+            </div>
           </div>
         </section>
 
