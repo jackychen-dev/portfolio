@@ -82,7 +82,7 @@ export default function Initiatives() {
                 </p>
                 
                 <div className="mt-auto text-blue-600 text-sm font-medium flex items-center pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <span>Click here for project details</span>
+                  <span>Project details</span>
                   <ArrowRight size={14} className="ml-2" />
                 </div>
               </motion.div>
