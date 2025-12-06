@@ -27,7 +27,7 @@ export default function About() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Technical Capabilities</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Technical Skills</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
             A hybrid skillset shaped by hands-on engineering, systems thinking, and full-lifecycle program execution.
           </p>
@@ -43,7 +43,14 @@ export default function About() {
               transition={{ delay: index * 0.1 }}
               className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-neutral-800 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
-              <h3 className="text-xl font-bold text-blue-600">{category.title}</h3>
+              <h3 className="text-xl font-bold mb-6 text-blue-600">{category.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span key={skill} className="px-3 py-1.5 bg-gray-100 dark:bg-neutral-800 rounded-lg text-sm font-medium hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-300 transition-all duration-200 cursor-default">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
