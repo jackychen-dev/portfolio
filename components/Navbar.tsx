@@ -89,33 +89,37 @@ export default function Navbar() {
           <Link href="/#contact" className="hover:text-blue-600 transition-colors font-medium">Contact</Link>
           
           {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {mounted && theme === 'dark' ? (
-              <Sun size={20} className="text-gray-700 dark:text-gray-300" />
-            ) : (
-              <Moon size={20} className="text-gray-700 dark:text-gray-300" />
-            )}
-          </button>
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {theme === 'dark' ? (
+                <Sun size={20} className="text-gray-700 dark:text-gray-300" />
+              ) : (
+                <Moon size={20} className="text-gray-700 dark:text-gray-300" />
+              )}
+            </button>
+          )}
         </div>
         
         {/* Mobile menu with dark mode toggle */}
-        <div className="md:hidden flex items-center gap-4">
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {mounted && theme === 'dark' ? (
-              <Sun size={20} className="text-gray-700 dark:text-gray-300" />
-            ) : (
-              <Moon size={20} className="text-gray-700 dark:text-gray-300" />
-            )}
-          </button>
-        </div>
+        {mounted && (
+          <div className="md:hidden flex items-center gap-4">
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-800 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {theme === 'dark' ? (
+                <Sun size={20} className="text-gray-700 dark:text-gray-300" />
+              ) : (
+                <Moon size={20} className="text-gray-700 dark:text-gray-300" />
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </motion.nav>
   )
