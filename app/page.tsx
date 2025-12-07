@@ -10,8 +10,8 @@ export default function Home() {
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white overflow-x-hidden">
       <Navbar />
       <Hero />
-      <About />
       <ExperienceSnippet />
+      <About />
       <Initiatives />
       <Contact />
       
