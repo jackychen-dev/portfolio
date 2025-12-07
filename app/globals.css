@@ -30,34 +30,34 @@
 
 /* Responsive font scaling based on screen size */
 html {
-  font-size: 100%; /* Base: mobile and small screens */
+  font-size: 95%; /* Base: mobile and small screens */
 }
 
 /* Tablet and small desktop */
 @media (min-width: 768px) {
   html {
-    font-size: 105%;
+    font-size: 100%;
   }
 }
 
 /* Medium desktop */
 @media (min-width: 1024px) {
   html {
-    font-size: 110%;
+    font-size: 105%;
   }
 }
 
 /* Large desktop */
 @media (min-width: 1280px) {
   html {
-    font-size: 115%;
+    font-size: 110%;
   }
 }
 
 /* Extra large desktop */
 @media (min-width: 1536px) {
   html {
-    font-size: 120%;
+    font-size: 115%;
   }
 }
 
