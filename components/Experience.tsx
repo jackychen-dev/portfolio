@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { Calendar, MapPin, ArrowRight, Brain, Cpu, Battery, PenTool, GraduationCap } from 'lucide-react'
+import { Calendar, MapPin, ArrowRight, Brain, Cpu, Battery, PenTool, GraduationCap, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useRef } from 'react'
 
@@ -209,6 +209,28 @@ export default function Experience() {
             );
           })}
         </div>
+        
+        {/* Scroll Indicator - Bottom of Experience Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-16 flex flex-col items-center gap-3"
+        >
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500"
+          >
+            <span className="text-xs font-medium tracking-wider uppercase">More below</span>
+            <ChevronDown size={20} className="animate-bounce" />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
