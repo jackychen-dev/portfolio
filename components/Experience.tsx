@@ -93,6 +93,9 @@ export default function Experience() {
   })
 
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  
+  // Arrow position follows the scroll progress (moves down the timeline as you scroll)
+  const arrowTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
     <section ref={sectionRef} id="experience" className="py-20 section-level-2 relative z-0">
@@ -113,31 +116,31 @@ export default function Experience() {
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600 origin-top"
               style={{ height: progressHeight }}
             />
-          </div>
-          
-          {/* Scroll Arrow Indicator at End of Timeline */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="hidden md:flex absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-full flex items-center justify-center z-20 mt-4"
-          >
+            
+            {/* Scroll Arrow Indicator - Follows Scroll Progress */}
             <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
+              style={{ 
+                top: arrowTop,
+                transform: 'translate(-50%, -50%)'
               }}
+              className="absolute left-1/2 flex items-center justify-center z-20"
             >
-              <ChevronDown 
-                size={24} 
-                strokeWidth={3}
-                className="text-blue-600 dark:text-blue-400"
-              />
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <ChevronDown 
+                  size={24} 
+                  strokeWidth={3}
+                  className="text-blue-600 dark:text-blue-400"
+                />
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
           {experiences.map((exp, index) => {
             const isTPM = exp.type === 'TPM';
             const isEducation = exp.type === 'Education';
