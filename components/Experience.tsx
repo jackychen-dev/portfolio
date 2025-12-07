@@ -105,10 +105,14 @@ export default function Experience() {
     offset: ["start end", "end start"]
   })
 
+  // Use global scroll to match scrollbar thumb position
+  const { scrollYProgress: globalScroll } = useScroll()
+
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
   
-  // Arrow position follows the scroll progress (moves down the timeline as you scroll)
-  const arrowTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  // Arrow position matches scrollbar position - maps global scroll to timeline section
+  // When scrollbar is at top of page, arrow at top of timeline; when at bottom, arrow at bottom
+  const arrowTop = useTransform(globalScroll, [0, 1], ["0%", "100%"])
   
   // Calculate which circle should have outline based on scroll progress
   const getCircleOutlineOpacity = (index: number) => {
