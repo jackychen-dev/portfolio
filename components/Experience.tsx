@@ -232,7 +232,13 @@ export default function Experience() {
                   
                   {/* Timeline dot */}
                   <div className="absolute left-[-5px] md:left-1/2 md:-ml-1.5 mt-1.5 md:mt-0 flex items-center justify-center">
-                    <div className={`w-3 h-3 rounded-full ${dotColor}`}></div>
+                    <motion.div 
+                      style={{ 
+                        scale: dotScale,
+                        opacity: dotOpacity
+                      }}
+                      className={`w-3 h-3 rounded-full ${dotColor} transition-all duration-300`}
+                    ></motion.div>
                   </div>
 
                   <div className="md:w-5/12">
