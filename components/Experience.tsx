@@ -151,9 +151,10 @@ export default function Experience() {
             <motion.div
               style={{ 
                 top: arrowTop,
+                left: '50%',
                 transform: 'translate(-50%, -50%)'
               }}
-              className="absolute left-1/2 flex items-center justify-center z-30"
+              className="absolute flex items-center justify-center z-30"
             >
               <motion.div
                 animate={{ y: [0, 6, 0] }}
@@ -162,7 +163,7 @@ export default function Experience() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="relative z-30"
+                className="relative z-30 flex items-center justify-center"
               >
                 <ChevronDown 
                   size={24} 
