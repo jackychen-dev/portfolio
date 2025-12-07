@@ -93,6 +93,9 @@ export default function Experience() {
   })
 
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  
+  // Arrow position follows the progress (moves down the timeline as you scroll)
+  const arrowTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
     <section ref={sectionRef} id="experience" className="py-20 section-level-2 relative z-0">
@@ -117,7 +120,7 @@ export default function Experience() {
             {/* Scroll Arrow Indicator on Timeline Progress */}
             <motion.div
               style={{ 
-                top: progressHeight,
+                top: arrowTop,
                 transform: 'translate(-50%, -50%)'
               }}
               className="absolute left-1/2 flex flex-col items-center gap-1 z-20"
