@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+export default function Hero() {
   return (
     <section className="h-screen flex items-center justify-center pt-16 sm:pt-20 pb-4 sm:pb-6 px-4 sm:px-6 section-level-1 hero-shadow relative z-0 overflow-hidden">
       {/* Gradient fade at bottom to hint at more content */}
