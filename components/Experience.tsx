@@ -107,8 +107,9 @@ export default function Experience() {
 
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
   
-  // Arrow position leads the way - positioned at the bottom edge of the blue progress bar
-  const arrowTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  // Arrow position leads the way - positioned exactly at the bottom edge of the blue progress bar
+  // Using the same value as progressHeight so arrow sits exactly where blue ends
+  const arrowTop = progressHeight
   
   // Calculate which circle should have outline based on scroll progress
   const getCircleOutlineOpacity = (index: number) => {
@@ -148,7 +149,7 @@ export default function Experience() {
               style={{ 
                 top: arrowTop,
                 left: '50%',
-                transform: 'translate(-50%, 0%)'
+                transform: 'translate(-50%, -50%)'
               }}
               className="absolute flex items-center justify-center z-30"
             >
