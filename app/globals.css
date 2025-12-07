@@ -110,16 +110,14 @@ body {
   opacity: 0.2;
 }
 
-/* Gradient Divider Utilities */
+/* Hero Shadow Transition */
 @layer utilities {
-  .gradient-divider {
-    height: 60px;
-    width: 100%;
-    background: linear-gradient(to bottom, #ffffff 0%, #f5f5f7 100%);
+  .hero-shadow {
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.06);
   }
 
-  .dark .gradient-divider {
-    background: linear-gradient(to bottom, #0f0f0f 0%, #1a1a1c 100%);
+  .dark .hero-shadow {
+    box-shadow: 0 40px 60px rgba(255, 255, 255, 0.05);
   }
 }
 
