@@ -1,6 +1,7 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion'
+import { useEffect } from 'react'
 import { Calendar, MapPin, ArrowRight, Brain, Cpu, Battery, PenTool, GraduationCap, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useRef } from 'react'
@@ -100,16 +101,39 @@ const experiences = [
 
 export default function Experience() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  })
-
-  const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
   
-  // Arrow position leads the way - positioned exactly at the bottom edge of the blue progress bar
-  // Using the same value as progressHeight so arrow sits exactly where blue ends
-  const arrowTop = progressHeight
+  // Track overall page scroll to sync both arrow and progress bar with scrollbar position
+  const { scrollY } = useScroll()
+  
+  // Shared progress calculation based on scrollbar position
+  // Add multiplier to move arrow/progress bar slightly ahead of scrollbar to keep pace
+  const scrollbarProgress = useTransform(scrollY, (scrollYValue) => {
+    if (!sectionRef.current || typeof window === 'undefined') return 0
+    
+    const sectionTop = sectionRef.current.offsetTop
+    const sectionHeight = sectionRef.current.offsetHeight
+    
+    // Initial offset to start arrow/progress bar a bit lower (15% down)
+    const startOffset = 0.15
+    
+    // Check if scrollbar has reached the section start
+    if (scrollYValue < sectionTop) {
+      return startOffset // Start a bit down instead of at top
+    }
+    
+    // Calculate base progress through the section
+    const baseProgress = (scrollYValue - sectionTop) / sectionHeight
+    
+    // Add multiplier to move ahead of scrollbar (1.15 = 15% ahead)
+    // Scale the remaining progress (1 - startOffset) and add start offset
+    const adjustedProgress = startOffset + (baseProgress * (1 - startOffset) * 1.15)
+    
+    return Math.min(adjustedProgress, 1)
+  })
+  
+  // Both progress bar and arrow sync with scrollbar position
+  const progressHeight = useTransform(scrollbarProgress, [0, 1], ["0%", "100%"])
+  const arrowTop = useTransform(scrollbarProgress, [0, 1], ["0%", "100%"])
   
   // Calculate which circle should have outline based on scroll progress
   const getCircleOutlineOpacity = (index: number) => {
@@ -118,7 +142,7 @@ export default function Experience() {
     const circleStart = index * progressPerCircle
     const circleEnd = (index + 1) * progressPerCircle
     
-    return useTransform(scrollYProgress, 
+    return useTransform(scrollbarProgress, 
       [circleStart - 0.1, circleStart, circleEnd, circleEnd + 0.1],
       [0, 1, 1, 0]
     )
