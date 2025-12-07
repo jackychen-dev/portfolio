@@ -41,8 +41,8 @@ const projects = [
 
 export default function Initiatives() {
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-neutral-900">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-20 section-level-3 relative z-0">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export default function Initiatives() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-black border-2 border-gray-300 dark:border-neutral-700 rounded-2xl p-8 group-hover:border-blue-500 transition-all duration-300 h-full flex flex-col shadow-sm group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:scale-[1.02]"
+                className="card-glassy border-2 border-gray-300 dark:border-neutral-700 rounded-2xl p-8 group-hover:border-blue-500 transition-all duration-300 h-full flex flex-col card-subtle-shadow group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:scale-[1.02] relative z-10"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>

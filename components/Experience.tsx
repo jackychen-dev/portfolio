@@ -95,8 +95,8 @@ export default function Experience() {
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
-    <section ref={sectionRef} id="experience" className="py-20 bg-white dark:bg-black border-t border-gray-100 dark:border-neutral-900">
-      <div className="container mx-auto px-6">
+    <section ref={sectionRef} id="experience" className="py-20 section-level-2 relative z-0">
+      <div className="container mx-auto px-6 relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export default function Experience() {
             }
 
             const CardContent = (
-              <div className={`relative p-6 rounded-2xl transition-all duration-300 border-2 ${isTPM ? 'border-blue-200 dark:border-blue-800/50' : isEducation ? 'border-purple-200 dark:border-purple-800/50' : 'border-emerald-200 dark:border-emerald-800/50'} group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:scale-[1.02] ${bgColor} ${borderColor}`}>
+              <div className={`relative p-6 rounded-2xl transition-all duration-300 border-2 ${isTPM ? 'border-blue-200 dark:border-blue-800/50' : isEducation ? 'border-purple-200 dark:border-purple-800/50' : 'border-emerald-200 dark:border-emerald-800/50'} group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:scale-[1.02] ${bgColor} ${borderColor} card-subtle-shadow`}>
                 
                 {/* Role Badge */}
                 <div className={`absolute -top-3 right-6 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md bg-white dark:bg-neutral-800 ${accentColor} border border-gray-200 dark:border-neutral-700`}>

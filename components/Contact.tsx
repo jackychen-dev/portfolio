@@ -5,8 +5,8 @@ import { Mail, Linkedin } from 'lucide-react'
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-neutral-900">
-      <div className="container mx-auto px-6 text-center">
+    <section id="contact" className="py-20 section-level-4 relative z-0">
+      <div className="container mx-auto px-6 text-center relative z-10">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function Contact() {
           className="flex flex-wrap justify-center items-start gap-8 mx-auto"
         >
           <a href="mailto:jackychen273@gmail.com" className="flex flex-col items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group">
-            <div className="p-4 bg-white dark:bg-neutral-800 rounded-full shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+            <div className="p-4 card-glassy rounded-full card-subtle-shadow group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
               <Mail size={32} />
             </div>
             <div className="flex flex-col items-center text-center">
@@ -42,7 +42,7 @@ export default function Contact() {
           </a>
           
           <a href="https://www.linkedin.com/in/jchenl/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 group">
-            <div className="p-4 bg-white dark:bg-neutral-800 rounded-full shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+            <div className="p-4 card-glassy rounded-full card-subtle-shadow group-hover:shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10">
               <Linkedin size={32} />
             </div>
             <span className="font-medium">LinkedIn</span>

@@ -5,16 +5,108 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* 4-Level Neutral Palette */
+  --level-1: #ffffff;
+  --level-2: #f7f7f9;
+  --level-3-start: #f4f4f6;
+  --level-3-end: #ededf0;
+  --level-4-start: #e9ebee;
+  --level-4-end: #f3f3f5;
 }
 
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  
+  /* Dark mode variants - maintain subtle contrast */
+  --level-1: #0a0a0a;
+  --level-2: #111111;
+  --level-3-start: #141414;
+  --level-3-end: #181818;
+  --level-4-start: #1a1a1a;
+  --level-4-end: #161616;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Section Background Utilities */
+.section-level-1 {
+  background-color: var(--level-1);
+}
+
+.section-level-2 {
+  background-color: var(--level-2);
+}
+
+.section-level-3 {
+  background: linear-gradient(to bottom right, var(--level-3-start), var(--level-3-end));
+  position: relative;
+}
+
+.section-level-3::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.03));
+  pointer-events: none;
+}
+
+.dark .section-level-3::before {
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.1));
+}
+
+.section-level-4 {
+  background: linear-gradient(to bottom, var(--level-4-start), var(--level-4-end));
+  position: relative;
+}
+
+.section-level-4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.03));
+  pointer-events: none;
+}
+
+.dark .section-level-4::before {
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.1));
+}
+
+/* Card Styles */
+.card-subtle-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.dark .card-subtle-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-glassy {
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.dark .card-glassy {
+  background: rgba(10, 10, 10, 0.7);
+}
+
+/* Optional Grain Overlay (requires /noise.png) */
+.section-with-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/noise.png');
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark .section-with-grain::after {
+  opacity: 0.2;
 }
 
