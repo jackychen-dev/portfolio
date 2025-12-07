@@ -231,18 +231,8 @@ export default function Experience() {
                   <div className="md:w-5/12 mb-4 md:mb-0"></div>
                   
                   {/* Timeline dot */}
-                  <div className="absolute left-[-5px] md:left-1/2 md:-ml-1.5 mt-1.5 md:mt-0">
-                    <div className={`w-3 h-3 rounded-full ring-4 ring-white dark:ring-black ${dotColor} relative`}>
-                      {/* Glow effect when arrow reaches dot */}
-                      <motion.div
-                        style={{ opacity: glowOpacity }}
-                        className={`absolute inset-0 rounded-full ${isTPM ? 'bg-blue-400' : isEducation ? 'bg-purple-400' : 'bg-emerald-400'} blur-md -m-2 transition-opacity`}
-                      />
-                      <motion.div
-                        style={{ opacity: glowOpacity }}
-                        className={`absolute inset-0 rounded-full border-2 ${isTPM ? 'border-blue-400' : isEducation ? 'border-purple-400' : 'border-emerald-400'} -m-1 transition-opacity`}
-                      />
-                    </div>
+                  <div className="absolute left-[-5px] md:left-1/2 md:-ml-1.5 mt-1.5 md:mt-0 flex items-center justify-center">
+                    <div className={`w-3 h-3 rounded-full ${dotColor}`}></div>
                   </div>
 
                   <div className="md:w-5/12">
