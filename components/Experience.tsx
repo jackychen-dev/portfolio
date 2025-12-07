@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Calendar, MapPin, ArrowRight, Brain, Cpu, Battery, PenTool, GraduationCap, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
 import { useRef } from 'react'
@@ -14,7 +14,7 @@ function TimelineDot({
 }: { 
   index: number
   totalCircles: number
-  scrollYProgress: MotionValue<number>
+  scrollYProgress: any
   dotColor: string
 }) {
   const dotPosition = (index + 0.5) / totalCircles
@@ -131,6 +131,19 @@ export default function Experience() {
   
   // Arrow position follows the scroll progress (moves down the timeline as you scroll)
   const arrowTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  
+  // Calculate which circle should have outline based on scroll progress
+  const getCircleOutlineOpacity = (index: number) => {
+    const totalCircles = experiences.length
+    const progressPerCircle = 1 / totalCircles
+    const circleStart = index * progressPerCircle
+    const circleEnd = (index + 1) * progressPerCircle
+    
+    return useTransform(scrollYProgress, 
+      [circleStart - 0.1, circleStart, circleEnd, circleEnd + 0.1],
+      [0, 1, 1, 0]
+    )
+  }
 
   return (
     <section ref={sectionRef} id="experience" className="py-20 section-level-2 relative z-0">
