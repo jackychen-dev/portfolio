@@ -7,6 +7,8 @@ import { ChevronDown } from 'lucide-react'
 export default function Hero() {
   return (
     <section className="h-screen flex items-center justify-center pt-16 sm:pt-20 pb-4 sm:pb-6 px-4 sm:px-6 section-level-1 hero-shadow relative z-0 overflow-hidden">
+      {/* Gradient fade at bottom to hint at more content */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/80 dark:from-black/80 via-white/40 dark:via-black/40 to-transparent pointer-events-none z-10"></div>
       <div className="container mx-auto max-w-5xl text-center relative z-10 flex flex-col items-center justify-center h-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -71,25 +73,37 @@ export default function Hero() {
         </motion.div>
       </div>
       
-      {/* Scroll Indicator - Bottom Right Corner */}
+      {/* Scroll Indicator - Centered at Bottom */}
       <motion.a
         href="#experience"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 flex items-center gap-2 z-20 group"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20 group"
       >
         <motion.div
-          animate={{ x: [0, -4, 0] }}
+          animate={{ y: [0, 6, 0] }}
           transition={{
-            duration: 1.5,
+            duration: 2,
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="flex items-center gap-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors cursor-pointer"
+          className="flex flex-col items-center gap-2"
         >
-          <span className="text-xs font-medium tracking-wider uppercase hidden sm:inline">Explore</span>
-          <ChevronDown size={18} className="rotate-[-90deg] group-hover:scale-110 transition-transform" />
+          <span className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            Explore my work
+          </span>
+          <div className="w-6 h-10 rounded-full border-2 border-gray-300 dark:border-gray-600 group-hover:border-blue-500 dark:group-hover:border-blue-400 transition-colors flex justify-center pt-2">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="w-1.5 h-1.5 rounded-full bg-gray-400 dark:bg-gray-500 group-hover:bg-blue-500 dark:group-hover:bg-blue-400 transition-colors"
+            />
+          </div>
         </motion.div>
       </motion.a>
     </section>
