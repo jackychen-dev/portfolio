@@ -6,17 +6,14 @@ import { ChevronDown } from 'lucide-react'
 import { useRef } from 'react'
 
 export default function Hero() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end end"]
-  })
+  const { scrollYProgress } = useScroll()
   
   // Transform scroll progress to arrow position (moves down as you scroll)
-  const arrowY = useTransform(scrollYProgress, [0, 1], [0, 100])
+  // Maps scroll progress (0-1) to pixel movement (0-150px)
+  const arrowY = useTransform(scrollYProgress, [0, 0.3], [0, 150])
 
   return (
-    <section ref={sectionRef} className="h-screen flex items-center justify-center pt-16 sm:pt-20 pb-4 sm:pb-6 px-4 sm:px-6 section-level-1 hero-shadow relative z-0 overflow-hidden">
+    <section className="h-screen flex items-center justify-center pt-16 sm:pt-20 pb-4 sm:pb-6 px-4 sm:px-6 section-level-1 hero-shadow relative z-0 overflow-hidden">
       {/* Gradient fade at bottom to hint at more content */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/80 dark:from-black/80 via-white/40 dark:via-black/40 to-transparent pointer-events-none z-10"></div>
       <div className="container mx-auto max-w-5xl text-center relative z-10 flex flex-col items-center justify-center h-full">
