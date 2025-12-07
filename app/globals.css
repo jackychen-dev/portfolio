@@ -110,3 +110,16 @@ body {
   opacity: 0.2;
 }
 
+/* Gradient Divider Utilities */
+@layer utilities {
+  .gradient-divider {
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(to bottom, #ffffff 0%, #f5f5f7 100%);
+  }
+
+  .dark .gradient-divider {
+    background: linear-gradient(to bottom, #0f0f0f 0%, #1a1a1c 100%);
+  }
+}
+
