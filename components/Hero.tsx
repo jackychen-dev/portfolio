@@ -72,11 +72,12 @@ export default function Hero() {
       </div>
       
       {/* Scroll Indicator */}
-      <motion.div
+      <motion.a
+        href="#experience"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20 group"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
@@ -85,12 +86,12 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 transition-colors cursor-pointer"
+          className="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors cursor-pointer"
         >
           <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
-          <ChevronDown size={20} />
+          <ChevronDown size={20} className="group-hover:scale-110 transition-transform" />
         </motion.div>
-      </motion.div>
+      </motion.a>
     </section>
   )
 }
