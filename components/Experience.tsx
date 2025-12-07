@@ -174,6 +174,18 @@ export default function Experience() {
               borderColor = 'hover:border-purple-200 dark:hover:border-purple-800';
               dotColor = 'bg-purple-600';
             }
+            
+            // Calculate subtle change when arrow hits/passes this dot
+            const totalCircles = experiences.length
+            const dotPosition = (index + 0.5) / totalCircles
+            const dotScale = useTransform(scrollYProgress, 
+              [dotPosition - 0.05, dotPosition, dotPosition + 0.05],
+              [1, 1.3, 1]
+            )
+            const dotOpacity = useTransform(scrollYProgress, 
+              [dotPosition - 0.1, dotPosition - 0.05, dotPosition + 0.05, dotPosition + 0.1],
+              [0.6, 1, 1, 0.8]
+            )
 
             const CardContent = (
               <div className={`relative p-6 rounded-2xl transition-all duration-300 border-2 ${isTPM ? 'border-blue-200 dark:border-blue-800/50' : isEducation ? 'border-purple-200 dark:border-purple-800/50' : 'border-emerald-200 dark:border-emerald-800/50'} group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:scale-[1.02] ${bgColor} ${borderColor} card-subtle-shadow`}>
