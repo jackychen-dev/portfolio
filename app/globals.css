@@ -28,6 +28,10 @@
   --level-4-end: #161616;
 }
 
+html {
+  font-size: 110%;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
