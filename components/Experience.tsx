@@ -123,20 +123,25 @@ export default function Experience() {
                 top: arrowTop,
                 transform: 'translate(-50%, -50%)'
               }}
-              className="absolute left-1/2 flex flex-col items-center gap-1 z-20"
+              className="absolute left-1/2 flex flex-col items-center z-20"
             >
               <motion.div
-                animate={{ y: [0, 4, 0] }}
+                animate={{ y: [0, 6, 0] }}
                 transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
+                className="flex flex-col items-center"
               >
+                {/* Blue arrowhead */}
                 <ChevronDown 
-                  size={16} 
-                  className="text-blue-600 dark:text-blue-400 drop-shadow-lg"
+                  size={20} 
+                  strokeWidth={2.5}
+                  className="text-blue-600 dark:text-blue-400"
                 />
+                {/* Grey line extending below */}
+                <div className="w-0.5 h-8 bg-gray-300 dark:bg-gray-600 mt-0.5"></div>
               </motion.div>
             </motion.div>
           </div>
