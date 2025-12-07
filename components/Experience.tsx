@@ -93,9 +93,6 @@ export default function Experience() {
   })
 
   const progressHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-  
-  // Arrow position follows the progress (moves down the timeline as you scroll)
-  const arrowTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
     <section ref={sectionRef} id="experience" className="py-20 section-level-2 relative z-0">
@@ -117,13 +114,9 @@ export default function Experience() {
               style={{ height: progressHeight }}
             />
             
-            {/* Scroll Arrow Indicator on Timeline Progress */}
+            {/* Scroll Arrow Indicator at End of Timeline */}
             <motion.div
-              style={{ 
-                top: arrowTop,
-                transform: 'translate(-50%, -50%)'
-              }}
-              className="absolute left-1/2 flex flex-col items-center z-20"
+              className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 flex items-center z-20"
             >
               <motion.div
                 animate={{ y: [0, 6, 0] }}
@@ -132,16 +125,12 @@ export default function Experience() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="flex flex-col items-center"
               >
-                {/* Blue arrowhead */}
                 <ChevronDown 
-                  size={20} 
-                  strokeWidth={2.5}
+                  size={24} 
+                  strokeWidth={3}
                   className="text-blue-600 dark:text-blue-400"
                 />
-                {/* Grey line extending below */}
-                <div className="w-0.5 h-8 bg-gray-300 dark:bg-gray-600 mt-0.5"></div>
               </motion.div>
             </motion.div>
           </div>
