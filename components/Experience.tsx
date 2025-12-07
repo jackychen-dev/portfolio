@@ -7,35 +7,13 @@ import { useRef } from 'react'
 
 // Timeline Dot Component
 function TimelineDot({ 
-  index, 
-  totalCircles, 
-  scrollYProgress, 
   dotColor 
 }: { 
-  index: number
-  totalCircles: number
-  scrollYProgress: any
   dotColor: string
 }) {
-  const dotPosition = (index + 0.5) / totalCircles
-  const dotScale = useTransform(scrollYProgress, 
-    [dotPosition - 0.05, dotPosition, dotPosition + 0.05],
-    [1, 1.3, 1]
-  )
-  const dotOpacity = useTransform(scrollYProgress, 
-    [dotPosition - 0.1, dotPosition - 0.05, dotPosition + 0.05, dotPosition + 0.1],
-    [0.6, 1, 1, 0.8]
-  )
-
   return (
     <div className="absolute left-[-5px] md:left-1/2 md:-ml-1.5 mt-1.5 md:mt-0 flex items-center justify-center">
-      <motion.div 
-        style={{ 
-          scale: dotScale,
-          opacity: dotOpacity
-        }}
-        className={`w-3 h-3 rounded-full ${dotColor} transition-all duration-300`}
-      ></motion.div>
+      <div className={`w-3 h-3 rounded-full ${dotColor}`}></div>
     </div>
   )
 }
@@ -267,9 +245,6 @@ export default function Experience() {
                   
                   {/* Timeline dot */}
                   <TimelineDot 
-                    index={index}
-                    totalCircles={experiences.length}
-                    scrollYProgress={scrollYProgress}
                     dotColor={dotColor}
                   />
 
