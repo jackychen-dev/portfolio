@@ -4,12 +4,14 @@ import ExperienceSnippet from '@/components/Experience' // This is now the snipp
 import Initiatives from '@/components/Projects'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
+import ScrollArrow from '@/components/ScrollArrow'
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white overflow-x-hidden">
       <Navbar />
       <Hero />
+      <ScrollArrow />
       <ExperienceSnippet />
       <About />
       <Initiatives />
