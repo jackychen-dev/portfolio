@@ -174,16 +174,6 @@ export default function Experience() {
               borderColor = 'hover:border-purple-200 dark:hover:border-purple-800';
               dotColor = 'bg-purple-600';
             }
-            
-            // Calculate outline opacity for this circle based on scroll progress
-            const totalCircles = experiences.length
-            const progressPerCircle = 1 / totalCircles
-            const circleStart = index * progressPerCircle
-            const circleEnd = (index + 1) * progressPerCircle
-            const circleOutlineOpacity = useTransform(scrollYProgress, 
-              [circleStart - 0.05, circleStart, circleEnd, circleEnd + 0.05],
-              [0, 1, 1, 0]
-            )
 
             const CardContent = (
               <div className={`relative p-6 rounded-2xl transition-all duration-300 border-2 ${isTPM ? 'border-blue-200 dark:border-blue-800/50' : isEducation ? 'border-purple-200 dark:border-purple-800/50' : 'border-emerald-200 dark:border-emerald-800/50'} group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:scale-[1.02] ${bgColor} ${borderColor} card-subtle-shadow`}>
@@ -241,15 +231,7 @@ export default function Experience() {
                   <div className="md:w-5/12 mb-4 md:mb-0"></div>
                   
                   {/* Timeline dot */}
-                  <div className="absolute left-[-5px] md:left-1/2 md:-ml-1.5 mt-1.5 md:mt-0">
-                    <div className={`w-3 h-3 rounded-full ring-4 ring-white dark:ring-black ${dotColor} relative`}>
-                      {/* Animated outline that appears as you scroll */}
-                      <motion.div
-                        style={{ opacity: circleOutlineOpacity }}
-                        className={`absolute inset-0 rounded-full border-2 ${isTPM ? 'border-blue-500' : isEducation ? 'border-purple-500' : 'border-emerald-500'} -m-1 animate-pulse`}
-                      />
-                    </div>
-                  </div>
+                  <div className={`absolute left-[-5px] md:left-1/2 md:-ml-1.5 w-3 h-3 rounded-full mt-1.5 md:mt-0 ring-4 ring-white dark:ring-black ${dotColor}`}></div>
 
                   <div className="md:w-5/12">
                     {isEducation ? (
