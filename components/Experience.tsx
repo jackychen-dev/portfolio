@@ -143,7 +143,7 @@ export default function Experience() {
           {/* Single timeline line with progress fill */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gray-400 dark:bg-neutral-600 shadow-sm">
             <motion.div 
-              className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600 origin-top"
+              className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600 origin-top z-10"
               style={{ height: progressHeight }}
             />
             
@@ -153,7 +153,7 @@ export default function Experience() {
                 top: arrowTop,
                 transform: 'translate(-50%, -50%)'
               }}
-              className="absolute left-1/2 flex items-center justify-center z-20"
+              className="absolute left-1/2 flex items-center justify-center z-30"
             >
               <motion.div
                 animate={{ y: [0, 6, 0] }}
@@ -162,11 +162,12 @@ export default function Experience() {
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
+                className="relative z-30"
               >
                 <ChevronDown 
                   size={24} 
                   strokeWidth={3}
-                  className="text-blue-600 dark:text-blue-400"
+                  className="text-blue-600 dark:text-blue-400 drop-shadow-lg"
                 />
               </motion.div>
             </motion.div>
