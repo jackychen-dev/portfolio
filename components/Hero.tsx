@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
-import { useRef } from 'react'
 
 export default function Hero() {
   const { scrollYProgress } = useScroll()
