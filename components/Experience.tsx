@@ -106,27 +106,31 @@ export default function Experience() {
   const { scrollY } = useScroll()
   
   // Shared progress calculation based on scrollbar position
-  // Add multiplier to move arrow/progress bar slightly ahead of scrollbar to keep pace
+  // Arrow starts at top with default blue bar, begins scrolling earlier
   const scrollbarProgress = useTransform(scrollY, (scrollYValue) => {
-    if (!sectionRef.current || typeof window === 'undefined') return 0
+    if (!sectionRef.current || typeof window === 'undefined') return 0.01
     
     const sectionTop = sectionRef.current.offsetTop
     const sectionHeight = sectionRef.current.offsetHeight
+    const windowHeight = window.innerHeight
     
-    // Initial offset to start arrow/progress bar a bit lower (15% down)
-    const startOffset = 0.15
+    // Start scrolling later - begin when scrollbar is 100px before section
+    const earlyStartOffset = 100
+    const scrollStartPoint = sectionTop - earlyStartOffset
     
-    // Check if scrollbar has reached the section start
-    if (scrollYValue < sectionTop) {
-      return startOffset // Start a bit down instead of at top
+    // Default minimum blue bar (1%)
+    const defaultMin = 0.01
+    
+    // If scrollbar hasn't reached early start point, show default blue bar
+    if (scrollYValue < scrollStartPoint) {
+      return defaultMin
     }
     
-    // Calculate base progress through the section
-    const baseProgress = (scrollYValue - sectionTop) / sectionHeight
+    // Calculate progress starting from early start point
+    const progressFromEarlyStart = (scrollYValue - scrollStartPoint) / (sectionHeight + earlyStartOffset)
     
-    // Add multiplier to move ahead of scrollbar (1.15 = 15% ahead)
-    // Scale the remaining progress (1 - startOffset) and add start offset
-    const adjustedProgress = startOffset + (baseProgress * (1 - startOffset) * 1.15)
+    // Add multiplier to move ahead of scrollbar (1.15 = 15% ahead) to keep pace
+    const adjustedProgress = defaultMin + (progressFromEarlyStart * (1 - defaultMin) * 1.15)
     
     return Math.min(adjustedProgress, 1)
   })
