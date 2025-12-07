@@ -7,17 +7,16 @@ export default function ScrollArrow() {
   const { scrollYProgress } = useScroll()
   
   // Transform scroll progress to arrow position (moves down as you scroll)
-  // Maps scroll progress (0-1) to pixel movement (0-200px)
-  const arrowY = useTransform(scrollYProgress, [0, 0.5], [0, 200])
+  // Maps scroll progress (0-1) to pixel movement (0-150px)
+  const arrowY = useTransform(scrollYProgress, [0, 0.4], [0, 150])
   
-  // Fade out as user scrolls past the hero section
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+  // Fade out as user scrolls past the hero section (after 30% scroll)
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
 
   return (
     <motion.a
       href="#experience"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 0.5 }}
       style={{ 
         y: arrowY,
