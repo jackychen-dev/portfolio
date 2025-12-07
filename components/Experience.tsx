@@ -113,32 +113,30 @@ export default function Experience() {
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600 origin-top"
               style={{ height: progressHeight }}
             />
-          </div>
-          
-          {/* Scroll Arrow on Timeline */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
-            className="hidden md:flex absolute left-1/2 -translate-x-1/2 bottom-[-60px] flex-col items-center gap-2 z-10"
-          >
+            
+            {/* Scroll Arrow Indicator on Timeline Progress */}
             <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
+              style={{ 
+                top: progressHeight,
+                transform: 'translate(-50%, -50%)'
               }}
-              className="flex flex-col items-center gap-1"
+              className="absolute left-1/2 flex flex-col items-center gap-1 z-20"
             >
-              <div className="w-0.5 h-8 bg-gradient-to-b from-blue-600 to-transparent"></div>
-              <ChevronDown 
-                size={20} 
-                className="text-blue-600 dark:text-blue-400"
-              />
+              <motion.div
+                animate={{ y: [0, 4, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <ChevronDown 
+                  size={16} 
+                  className="text-blue-600 dark:text-blue-400 drop-shadow-lg"
+                />
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
           {experiences.map((exp, index) => {
             const isTPM = exp.type === 'TPM';
             const isEducation = exp.type === 'Education';
@@ -234,28 +232,6 @@ export default function Experience() {
             );
           })}
         </div>
-        
-        {/* Scroll Indicator - Bottom of Experience Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 flex flex-col items-center gap-3"
-        >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500"
-          >
-            <span className="text-xs font-medium tracking-wider uppercase">More below</span>
-            <ChevronDown size={20} className="animate-bounce" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )

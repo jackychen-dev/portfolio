@@ -10,8 +10,8 @@ export default function ScrollArrow() {
   // Maps scroll progress (0-1) to pixel movement (0-150px)
   const arrowY = useTransform(scrollYProgress, [0, 0.4], [0, 150])
   
-  // Fade out as user scrolls past the hero section (after 30% scroll)
-  const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
+  // Fade out quickly as user scrolls past the hero section (only visible on hero)
+  const opacity = useTransform(scrollYProgress, [0, 0.15], [1, 0])
 
   return (
     <motion.a
