@@ -259,7 +259,7 @@ export default function Experience() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative pl-8 md:pl-0 -mt-6"
+                className="relative pl-8 md:pl-0 -mt-20"
               >
                 <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                   <div className="md:w-5/12 mb-4 md:mb-0"></div>
