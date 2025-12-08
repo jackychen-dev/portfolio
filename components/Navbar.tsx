@@ -31,6 +31,10 @@ export default function Navbar() {
     { name: 'Envest (Intern)', href: '/experience/envest' },
   ]
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -45,7 +49,7 @@ export default function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
-          <Link href="/#about" className="hover:text-blue-600 transition-colors font-medium">About</Link>
+          <button onClick={scrollToTop} className="hover:text-blue-600 transition-colors font-medium">About</button>
           
           {/* Dropdown for Work Experience */}
           <div 
