@@ -28,7 +28,7 @@ const experiences = [
     location: "Canada",
     type: "TPM",
     theme: "blue",
-    icon: <Brain size={20} />,
+    icon: <Brain size={18} />,
     summary: "Drove cross-functional execution for the Tesla Model-Y door-hinge automation line, managing system architecture, mechanical integration, and vendor coordination on a $10M program under tight timelines.",
     description: [
       "Resolved a critical project bottleneck by creating a regression-based machining offset model, correcting tolerancing issues, reducing machining range by 25%, and ensuring contractual compliance.",
@@ -46,7 +46,7 @@ const experiences = [
     location: "San Francisco Bay Area",
     type: "Engineering",
     theme: "emerald",
-    icon: <Cpu size={20} />,
+    icon: <Cpu size={18} />,
     summary: "Led end-to-end development of CellFE’s high-throughput mechanoporation consumable and instrument, scaling the system from prototype to full operational throughput.",
     description: [
       "Scaled technology from 1M cells to high-volume processing (206-channel chips).",
@@ -62,7 +62,7 @@ const experiences = [
     location: "San Francisco Bay Area",
     type: "Engineering",
     theme: "emerald",
-    icon: <Battery size={20} />,
+    icon: <Battery size={18} />,
     summary: "Designed and validated battery packs for marine applications.",
     description: [
       "Reduced capacitor plate failures by 45% through custom fixture testing.",
@@ -77,7 +77,7 @@ const experiences = [
     location: "Toronto, ON",
     type: "Engineering",
     theme: "emerald",
-    icon: <PenTool size={20} />,
+    icon: <PenTool size={18} />,
     summary: "Prototyped automated smart chair drivetrains.",
     description: [
       "Developed drivetrain prototypes using FEA and iterative design.",
@@ -92,7 +92,7 @@ const experiences = [
     location: "Waterloo, ON",
     type: "Education",
     theme: "purple",
-    icon: <GraduationCap size={20} />,
+    icon: <GraduationCap size={18} />,
     summary: "Graduated with Honors, specializing in Mechanical Design and Automation.",
     description: [],
     isEducation: true
@@ -159,14 +159,14 @@ export default function Experience() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-center mb-16"
+          className="text-3xl md:text-4xl font-bold text-center mb-2"
         >
           Work Experience
         </motion.h2>
 
-        <div className="max-w-4xl mx-auto space-y-12 relative">
+        <div className="max-w-4xl mx-auto space-y-1 relative" style={{ transform: 'scale(0.92)' }}>
           {/* Single timeline line with progress fill */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gray-400 dark:bg-neutral-600 shadow-sm">
+          <div className="hidden md:block absolute left-1/2 -top-8 bottom-0 w-0.5 -translate-x-1/2 bg-gray-400 dark:bg-neutral-600 shadow-sm">
             <motion.div 
               className="absolute top-0 left-0 w-full bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600 origin-top z-10"
               style={{ height: progressHeight }}
@@ -177,25 +177,15 @@ export default function Experience() {
               style={{ 
                 top: arrowTop,
                 left: '50%',
-                transform: 'translate(-50%, -50%)'
+                transform: 'translate(-50%, -50%) scale(1.087)'
               }}
               className="absolute flex items-center justify-center z-30"
             >
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="relative z-30 flex items-center justify-center"
-              >
-                <ChevronDown 
-                  size={24} 
-                  strokeWidth={3}
-                  className="text-blue-600 dark:text-blue-400 drop-shadow-lg"
-                />
-              </motion.div>
+              <ChevronDown 
+                size={24} 
+                strokeWidth={3}
+                className="text-blue-600 dark:text-blue-400 drop-shadow-lg"
+              />
             </motion.div>
           </div>
           {experiences.map((exp, index) => {
@@ -240,11 +230,11 @@ export default function Experience() {
                 
                 <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
                   <div className="flex items-center gap-1">
-                    <Calendar size={14} />
+                    <Calendar size={12} />
                     <span>{exp.period}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <MapPin size={14} />
+                    <MapPin size={12} />
                     <span>{exp.location}</span>
                   </div>
                 </div>
@@ -256,7 +246,7 @@ export default function Experience() {
                 {!isEducation && (
                   <div className={`flex items-center text-sm font-medium ${accentColor} mt-4 pt-4 border-t border-gray-200 dark:border-gray-700`}>
                     <span>Click here for a deep dive</span>
-                    <ArrowRight size={16} className="ml-2" />
+                    <ArrowRight size={14} className="ml-2" />
                   </div>
                 )}
               </div>
@@ -269,7 +259,7 @@ export default function Experience() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="relative pl-8 md:pl-0"
+                className="relative pl-8 md:pl-0 -mt-6"
               >
                 <div className={`md:flex items-center justify-between ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                   <div className="md:w-5/12 mb-4 md:mb-0"></div>
