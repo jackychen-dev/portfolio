@@ -35,8 +35,8 @@ export default function CellFEPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="text-3xl md:text-5xl font-bold mb-4">High-Throughput Mechanoporation</h1>
-                <div className="flex flex-wrap items-center gap-6 text-base text-gray-600 dark:text-gray-400">
+                <h1 className="text-2xl md:text-4xl font-bold mb-4">High-Throughput Mechanoporation</h1>
+                <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
                   <span className="font-semibold text-blue-600 dark:text-blue-400">Cell Fluidics Engineering</span>
                   <span className="flex items-center gap-2"><Calendar size={18} /> Mar 2023 - Feb 2025</span>
                   <span className="flex items-center gap-2"><MapPin size={18} /> San Francisco Bay Area</span>
@@ -69,7 +69,7 @@ export default function CellFEPage() {
         {/* 1. Background & Scaling Challenge (cf_1) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <Info className="text-purple-600" /> Mechanoporation & The Scaling Challenge
             </h2>
                 <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -119,7 +119,7 @@ export default function CellFEPage() {
              </div>
           </div>
           <div className="md:col-span-6 order-1 md:order-2">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <Layers className="text-blue-600" /> High-Volume Consumable Chip
             </h2>
                 <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -136,7 +136,7 @@ export default function CellFEPage() {
         {/* 3. High-Volume Consumable Architecture (cd_4) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <Activity className="text-emerald-600" /> High-Volume Consumable Architecture
             </h2>
                 <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -193,7 +193,7 @@ export default function CellFEPage() {
              </div>
           </div>
           <div className="md:col-span-6 order-1 md:order-2">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <AlertTriangle className="text-orange-500" /> The Fracture & Leakage Mechanics Problem
             </h2>
                 <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -222,7 +222,7 @@ export default function CellFEPage() {
         {/* 5. 3D Gasket Innovation (cd_8 & cd_7 combined context) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <TrendingUp className="text-indigo-600" /> Innovation: 3D Gasket Topology
             </h2>
                 <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -270,7 +270,7 @@ export default function CellFEPage() {
              <p className="text-sm text-center text-gray-500 mt-3 italic">Reinforced gasket geometry with locator holes and thicker ridges.</p>
           </div>
           <div className="md:col-span-6 order-1 md:order-2">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <CheckCircle2 className="text-emerald-600" /> Optimizing the 3D Gasket Geometry
             </h2>
                 <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -366,7 +366,7 @@ export default function CellFEPage() {
         {/* 8. Final Production Architecture (cd_12) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <ImageIcon className="text-blue-600" /> Final Production Architecture
             </h2>
                 <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">

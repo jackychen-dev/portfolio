@@ -25,8 +25,8 @@ export default function LithosPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="text-3xl md:text-5xl font-bold mb-4">Lithos Energy</h1>
-                <div className="flex flex-wrap items-center gap-6 text-base text-gray-600 dark:text-gray-400">
+                <h1 className="text-2xl md:text-4xl font-bold mb-4">Lithos Energy</h1>
+                <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
                   <span className="font-semibold text-blue-600 dark:text-blue-400">Mechanical Design Engineer</span>
                   <span className="flex items-center gap-2"><Calendar size={18} /> Sep 2022 - Feb 2023</span>
                   <span className="flex items-center gap-2"><MapPin size={18} /> San Francisco Bay Area</span>
@@ -54,7 +54,7 @@ export default function LithosPage() {
         {/* 2. Adhesive Qualification */}
         <section className="grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-7">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <FileSpreadsheet className="text-blue-600" /> Adhesive Validation & Testing
             </h2>
             <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -104,7 +104,7 @@ export default function LithosPage() {
             />
           </div>
           <div className="md:col-span-7 order-1 md:order-2">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <ShieldCheck className="text-purple-600" /> Structural Optimization (FEA)
             </h2>
             <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">

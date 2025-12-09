@@ -41,8 +41,8 @@ export default function EclipsePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-3xl md:text-5xl font-bold mb-4">Tesla Model-Y Automation Line</h1>
-              <div className="flex flex-wrap items-center gap-6 text-base text-gray-600 dark:text-gray-400">
+              <h1 className="text-2xl md:text-4xl font-bold mb-4">Tesla Model-Y Automation Line</h1>
+              <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
                 <span className="font-semibold text-blue-600 dark:text-blue-400">Technical Program Manager</span>
                 <span className="flex items-center gap-2"><Calendar size={18} /> Feb 2025 - Present</span>
                 <span className="flex items-center gap-2"><MapPin size={18} /> Canada</span>
@@ -57,7 +57,7 @@ export default function EclipsePage() {
         {/* Overview */}
         <section>
           <div className="flex items-center gap-4 mb-6">
-            <h2 className="text-2xl font-bold flex items-center gap-3">
+            <h2 className="text-xl font-bold flex items-center gap-3">
               <Brain className="text-blue-600" /> Program Overview
             </h2>
             <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium rounded-full">
@@ -140,7 +140,7 @@ export default function EclipsePage() {
         {/* Key Initiatives */}
         <section className="flex flex-col gap-12">
           <div>
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-3">
               <TrendingUp className="text-blue-600" /> Bottleneck Resolution
             </h2>
             <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -154,7 +154,7 @@ export default function EclipsePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-3">
               <ClipboardCheck className="text-emerald-600" /> Custom Tracking Framework
             </h2>
             <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -168,7 +168,7 @@ export default function EclipsePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-3">
               <Users className="text-purple-600" /> Strategic Negotiation
             </h2>
             <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -182,7 +182,7 @@ export default function EclipsePage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-4 flex items-center gap-3">
               <AlertTriangle className="text-orange-600" /> Executive Reporting
             </h2>
             <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed">

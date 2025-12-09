@@ -41,8 +41,8 @@ export default function EnvestPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="text-3xl md:text-5xl font-bold mb-4">Envest Product Development</h1>
-                <div className="flex flex-wrap items-center gap-6 text-base text-gray-600 dark:text-gray-400">
+                <h1 className="text-2xl md:text-4xl font-bold mb-4">Envest Product Development</h1>
+                <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400">
                   <span className="font-semibold text-blue-600 dark:text-blue-400">Product Development Engineer</span>
                   <span className="flex items-center gap-2"><Calendar size={18} /> May 2021 - Aug 2021</span>
                   <span className="flex items-center gap-2"><MapPin size={18} /> Toronto, ON</span>
@@ -73,7 +73,7 @@ export default function EnvestPage() {
         {/* 2. Smart Chair Project */}
         <section className="grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-7">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <Armchair className="text-blue-600" /> The Smart Chair Project
             </h2>
             <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
@@ -171,7 +171,7 @@ export default function EnvestPage() {
              />
           </div>
           <div className="md:col-span-7">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3">
               <Wrench className="text-orange-500" /> Sheet Metal & Material Science
             </h2>
             <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
