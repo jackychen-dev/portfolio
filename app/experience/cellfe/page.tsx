@@ -124,10 +124,10 @@ export default function CellFEPage() {
             </h2>
             <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
-                The high-volume chip contains 206 interconnected through-holes that act as vertical inlets and outlets for the fluid stream. The chip footprint was constrained by <strong>photolithographic manufacturing limits</strong>, since enlarging the active area caused feature drift and reduced pattern fidelity. To achieve the required scale, the architecture shifted to a vertical stacking approach that distributes flow across multiple silicon layers.
+                The high-volume chip includes 206 interconnected through-holes that serve as vertical inlets and outlets for fluid flow. The size of the chip was limited by <strong>photolithography constraints</strong>, since increasing the active area caused the features to drift and lose accuracy. Because of this, scaling the system required a vertical stacking approach that spreads flow across several silicon layers instead of enlarging a single chip.
               </p>
               <p>
-                This stacked configuration placed significant demands on the gasket system. The gasket not only needed to create a reliable seal between each chip layer, it also had to guide fluid through a precise sequence of vertical and lateral paths. The final architecture balanced these requirements by combining high-density through-hole structures with a multilayer sealing system that maintained alignment, uniform flow distribution, and mechanical stability across the full stack.
+                This stacked design created strict requirements for the gasket system. Each gasket had to provide a reliable seal between layers while also directing fluid through a controlled sequence of vertical and horizontal pathways. The final architecture met these needs by pairing high-density through-hole structures with a multilayer gasket design that preserved alignment, maintained uniform flow distribution, and kept the entire stack mechanically stable.
               </p>
             </div>
           </div>
