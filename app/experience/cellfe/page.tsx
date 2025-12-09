@@ -74,13 +74,19 @@ export default function CellFEPage() {
             </h2>
             <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
-                Mechanoporation is a microfluidic technology that engineers precise cellular deformation to enable intracellular delivery. By driving cells through micro-scale constrictions at high velocity, the process induces transient pores in the cell membrane via controlled shear forces. This purely mechanical approach maintains high cell viability while allowing payloads—such as mRNA, CRISPR-Cas9, or proteins—to diffuse into the cytoplasm efficiently.
+                Mechanoporation is a microfluidic method that uses precise mechanical deformation to deliver material into cells. Cells are pushed through micro-scale constrictions at high velocity, which creates temporary openings in the cell membrane through controlled shear forces. This mechanical approach maintains high cell viability while allowing payloads such as mRNA, CRISPR systems, or proteins to enter the cytoplasm efficiently.
               </p>
               <p>
-                <strong>Scaling Constraint:</strong> The legacy device used a 2-channel silicon chip. Under biological load, debris and shear events caused rapid clogging, limiting throughput to ~1M cells per run and preventing meaningful scale-up.
+                <strong>Scaling Constraint:</strong>
               </p>
               <p>
-                <strong>Engineering Objective:</strong> I led the redesign of the consumable architecture to support &gt;100M cells per run. This required developing a new <strong>206-channel microfluidic chip</strong> and a scalable sealing + distribution system that preserved uniform shear conditions while providing channel-level redundancy.
+                The legacy device used a two-channel silicon chip. Under biological load, debris and shear events caused rapid clogging, which limited throughput to approximately one million cells per run and made meaningful scale-up impossible.
+              </p>
+              <p>
+                <strong>Engineering Objective:</strong>
+              </p>
+              <p>
+                I led the redesign of the consumable architecture to support more than one hundred million cells per run. This required creating a new <strong>206-channel microfluidic chip</strong> and a scalable sealing and flow distribution system that maintained uniform shear conditions while also providing channel-level redundancy for improved robustness.
               </p>
             </div>
           </div>
@@ -118,10 +124,10 @@ export default function CellFEPage() {
             </h2>
             <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
-                The high-volume chip features 206 interconnected through-holes acting as vertical inlets and outlets. The chip footprint was constrained by <strong>photolithographic manufacturing limitations</strong> - expanding the active area further introduced unacceptable feature drift, necessitating a vertical stacking approach for scale. The gasket structure is therefore critical for both sealing and guiding fluid flow through this multi-layer assembly.
+                The high-volume chip contains 206 interconnected through-holes that act as vertical inlets and outlets for the fluid stream. The chip footprint was constrained by <strong>photolithographic manufacturing limits</strong>, since enlarging the active area caused feature drift and reduced pattern fidelity. To achieve the required scale, the architecture shifted to a vertical stacking approach that distributes flow across multiple silicon layers.
               </p>
               <p>
-                To debug the physical assembly, I designed a custom multi-port diagnostic fixture. This allowed us to isolate layer-by-layer failures (gasket interface vs. manifold) and verify the seal integrity of the intricate fluid paths.
+                This stacked configuration placed significant demands on the gasket system. The gasket not only needed to create a reliable seal between each chip layer, it also had to guide fluid through a precise sequence of vertical and lateral paths. The final architecture balanced these requirements by combining high-density through-hole structures with a multilayer sealing system that maintained alignment, uniform flow distribution, and mechanical stability across the full stack.
               </p>
             </div>
           </div>
@@ -137,10 +143,13 @@ export default function CellFEPage() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Component Breakdown</h3>
                 <p>
-                  The consumable consists of a polycarbonate lid with integrated pressure-sensor, fill, and pneumatic ports; an inlet reservoir that stabilizes upstream flow; and a polycarbonate top plate with tapered funnel features for uniform hydraulic distribution.
+                  The consumable uses a modular polycarbonate housing that integrates the pressure, fill, and pneumatic interfaces. Upstream, an inlet reservoir with a built-in diffuser stabilizes incoming flow and ensures the chip stack receives uniform hydraulic loading across the full processing volume.
                 </p>
                 <p className="mt-2">
-                  The core is a multi-chip silicon stack sealed using custom injection-molded 3D gaskets. This stack is constrained by precision spacers and clamped against a polycarbonate bottom plate, terminating in an outlet reservoir with a flow-sensor port and a lofted outlet funnel that reduces dead volume and mitigates air-entrainment artifacts.
+                  At the center, a stack of silicon microfluidic chips is sealed with custom injection-molded gaskets and constrained with precision spacers to maintain consistent channel geometry and sealing pressure.
+                </p>
+                <p className="mt-2">
+                  Downstream, a shaped outlet reservoir with a flow-sensor port manages effluent and reduces dead volume to improve run-to-run measurement stability.
                 </p>
               </div>
               
@@ -189,24 +198,23 @@ export default function CellFEPage() {
             </h2>
             <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
-                The silicon microfluidic chips are fabricated via DRIE, producing high-aspect-ratio channels but resulting in an inherently brittle substrate with low fracture toughness. When multiple chips are stacked, the assembly becomes extremely sensitive to non-uniform clamping, torsional loading, surface flatness deviations, and gasket-induced bending moments - all of which can trigger catastrophic fracture.
+                The silicon microfluidic chips were fabricated using DRIE, which produces very high-aspect-ratio channels but also creates a brittle substrate with low fracture toughness. When multiple chips were stacked, the assembly became highly sensitive to uneven clamping, torsion, surface flatness variation, and bending forces from the gasket. Any of these factors could cause cracking.
+              </p>
+
+              <p>
+                This created a very tight mechanical window. Too little compression resulted in leakage and too much compression caused chip fracture. The usable range between these two failure modes was only a few percent of total gasket deflection, which is much smaller than what standard sealing methods can reliably control.
+              </p>
+
+              <p>
+                To understand this relationship, I built a custom diagnostic fixture that measured sealing force against both leakage and breakage. The push-to-connect manifold allowed rapid and repeatable testing across a wide range of loading conditions and made it possible to characterize how sealing pressure interacted with chip stress.
               </p>
               
               <div>
-                <p className="font-semibold text-gray-900 dark:text-white">A fundamental constraint defined the problem space:</p>
-                <ul className="list-disc pl-5 space-y-1 mt-2">
-                  <li>Too little compression → leakage.</li>
-                  <li>Too much compression → chip fracture.</li>
-                </ul>
+                <p className="font-semibold text-gray-900 dark:text-white mb-2">Solution</p>
+                <p>
+                  Preventing substrate failure required rethinking both structural reinforcement and how the sealing force was applied. The final design introduced reinforced silicon bridge structures and a 3D gasket geometry that concentrated compression only around the fluid paths. This configuration preserved the required sealing pressure while significantly reducing the mechanical load transmitted into the chips. By isolating the chips from bending and torsional forces and lowering the net substrate stress, the multi-chip assembly became far more robust and reliable.
+                </p>
               </div>
-
-              <p>
-                The allowable process window between these two failure modes was only a few percent of gasket deflection, far narrower than standard sealing strategies could maintain. To diagnose and characterize these coupled failure modes, I designed a custom pressure-diagnostic fixture with a push-to-connect manifold architecture.
-              </p>
-              
-              <p>
-                <strong>The Solution:</strong> Preventing substrate failure required rethinking both structural reinforcement and sealing mechanics to decouple sealing force from chip-level mechanical load. This drove the development of reinforced silicon bridge structures and a 3D gasket topology that localized compression only around fluid paths while offloading bending and torsional forces away from the chips.
-              </p>
             </div>
           </div>
         </section>
@@ -289,10 +297,10 @@ export default function CellFEPage() {
           </h2>
           <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 mb-8 max-w-4xl">
             <p>
-              Extensive material characterization was conducted to define the process window. We tested various silicone rubber formulations, comparing <strong>Shore 60A vs. Shore 70A</strong> hardness at different compression percentages.
+              I performed a broad set of material characterization tests to determine a safe and reliable sealing window. This included evaluating different silicone rubber formulations and comparing Shore 60A and Shore 70A materials across a range of compression levels. Through this testing, I identified that Shore 70A at approximately 19 percent compression provided reliable sealing without causing chip fracture.
             </p>
             <p>
-              Once the optimal material properties (Shore 70A at ~19% compression) were validated to seal without fracturing the chips, I collaborated closely with an external injection molding vendor. We refined the geometry for manufacturability (DFM), ensuring the complex ridge features could be molded consistently at production scale.
+              After defining these material and compression targets, I worked closely with an external injection molding vendor to refine the gasket design for manufacturability. I adjusted the geometry with their tooling engineers to ensure that the complex ridge features could be molded consistently at production scale while preserving the required sealing performance.
             </p>
           </div>
           <div className="min-w-[800px] bg-white dark:bg-neutral-900 rounded-xl border border-gray-200 dark:border-neutral-800 overflow-hidden shadow-sm">
@@ -363,13 +371,13 @@ export default function CellFEPage() {
             </h2>
             <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
-                The validated production solution used a three-part injection-molded gasket set (Top, Middle, Bottom) that consistently sealed a 5-chip silicon stack without mechanical failure. This architecture ensured stable compression, predictable flow distribution, and robust manufacturability.
+                The final production solution used a three-part injection-molded gasket set (Top, Middle, Bottom) that reliably sealed a five-chip silicon stack without mechanical failure. This architecture provided stable compression, predictable flow distribution, and strong manufacturability at scale.
               </p>
               <p>
-                I validated the final geometry with <strong>COMSOL multiphysics simulations</strong>, analyzing inlet-to-outlet pressure drop distribution, lateral uniformity across 206 channels, and flow symmetry.
+                I validated the final geometry using <strong>COMSOL multiphysics simulations</strong>. This included analyzing inlet-to-outlet pressure drop, lateral uniformity across the 206 channels, and overall flow symmetry through the stack.
               </p>
               <p>
-                The results confirmed that the scaled architecture preserved the precise flow and shear regimes required for successful mechanoporation. This was further validated in real-world trials with live cell processing, confirming that the high-volume system achieved biological parity with the legacy low-throughput benchmark.
+                The simulation results confirmed that the scaled architecture maintained the precise flow and shear conditions required for effective mechanoporation. I then verified this performance in live cell processing trials, which demonstrated that the high-volume system achieved biological outcomes comparable to the legacy low-throughput benchmark.
               </p>
             </div>
           </div>
