@@ -35,8 +35,8 @@ export default function CellFEPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <h1 className="text-4xl md:text-6xl font-bold mb-4">High-Throughput Mechanoporation</h1>
-                <div className="flex flex-wrap items-center gap-6 text-lg text-gray-600 dark:text-gray-400">
+                <h1 className="text-3xl md:text-5xl font-bold mb-4">High-Throughput Mechanoporation</h1>
+                <div className="flex flex-wrap items-center gap-6 text-base text-gray-600 dark:text-gray-400">
                   <span className="font-semibold text-blue-600 dark:text-blue-400">Cell Fluidics Engineering</span>
                   <span className="flex items-center gap-2"><Calendar size={18} /> Mar 2023 - Feb 2025</span>
                   <span className="flex items-center gap-2"><MapPin size={18} /> San Francisco Bay Area</span>
@@ -69,10 +69,10 @@ export default function CellFEPage() {
         {/* 1. Background & Scaling Challenge (cf_1) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <Info className="text-purple-600" /> Mechanoporation & The Scaling Challenge
             </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
                 Mechanoporation is a microfluidic method that uses precise mechanical deformation to deliver material into cells. Cells are pushed through micro-scale constrictions at high velocity, which creates temporary openings in the cell membrane through controlled shear forces. This mechanical approach maintains high cell viability while allowing payloads such as mRNA, CRISPR systems, or proteins to enter the cytoplasm efficiently.
               </p>
@@ -119,10 +119,10 @@ export default function CellFEPage() {
              </div>
           </div>
           <div className="md:col-span-6 order-1 md:order-2">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <Layers className="text-blue-600" /> High-Volume Consumable Chip
             </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
                 The high-volume chip includes 206 interconnected through-holes that serve as vertical inlets and outlets for fluid flow. The size of the chip was limited by <strong>photolithography constraints</strong>, since increasing the active area caused the features to drift and lose accuracy. Because of this, scaling the system required a vertical stacking approach that spreads flow across several silicon layers instead of enlarging a single chip.
               </p>
@@ -136,12 +136,12 @@ export default function CellFEPage() {
         {/* 3. High-Volume Consumable Architecture (cd_4) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <Activity className="text-emerald-600" /> High-Volume Consumable Architecture
             </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Component Breakdown</h3>
+                <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">Component Breakdown</h3>
                 <p>
                   The consumable uses a modular polycarbonate housing that integrates the pressure, fill, and pneumatic interfaces. Upstream, an inlet reservoir with a built-in diffuser stabilizes incoming flow and ensures the chip stack receives uniform hydraulic loading across the full processing volume.
                 </p>
@@ -154,7 +154,7 @@ export default function CellFEPage() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Prototyping & Validation</h3>
+                <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-2">Prototyping & Validation</h3>
                 <p>
                   Prototyping involved an extensive cycle of SLA/FDM 3D-printed components for rapid fit, tolerance, and flow testing. However, surface absorption and biocompatibility issues with printed materials ultimately drove a transition to machined polycarbonate for validation units.
                 </p>
@@ -193,10 +193,10 @@ export default function CellFEPage() {
              </div>
           </div>
           <div className="md:col-span-6 order-1 md:order-2">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <AlertTriangle className="text-orange-500" /> The Fracture & Leakage Mechanics Problem
             </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
                 The silicon microfluidic chips were fabricated using DRIE, which produces very high-aspect-ratio channels but also creates a brittle substrate with low fracture toughness. When multiple chips were stacked, the assembly became highly sensitive to uneven clamping, torsion, surface flatness variation, and bending forces from the gasket. Any of these factors could cause cracking.
               </p>
@@ -222,10 +222,10 @@ export default function CellFEPage() {
         {/* 5. 3D Gasket Innovation (cd_8 & cd_7 combined context) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <TrendingUp className="text-indigo-600" /> Innovation: 3D Gasket Topology
             </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
                 I developed a <strong>3D microstructured gasket</strong> featuring raised sealing ridges that localize compression forces only around fluid paths. This dramatically reduces total contact area - and therefore total required clamp force - while enabling the gasket to conform to micron-scale surface variations.
               </p>
@@ -270,10 +270,10 @@ export default function CellFEPage() {
              <p className="text-sm text-center text-gray-500 mt-3 italic">Reinforced gasket geometry with locator holes and thicker ridges.</p>
           </div>
           <div className="md:col-span-6 order-1 md:order-2">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <CheckCircle2 className="text-emerald-600" /> Optimizing the 3D Gasket Geometry
             </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
                 Early iterations of the 3D gasket experienced ridge "blowout" under high pressure. Through iterative topology refinement, I resolved these issues by:
               </p>
@@ -295,7 +295,7 @@ export default function CellFEPage() {
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
             <TableIcon className="text-blue-600" /> Validation Data: Sealing Performance
           </h2>
-          <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 mb-8 max-w-4xl">
+          <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 mb-8 max-w-4xl">
             <p>
               I performed a broad set of material characterization tests to determine a safe and reliable sealing window. This included evaluating different silicone rubber formulations and comparing Shore 60A and Shore 70A materials across a range of compression levels. Through this testing, I identified that Shore 70A at approximately 19 percent compression provided reliable sealing without causing chip fracture.
             </p>
@@ -366,10 +366,10 @@ export default function CellFEPage() {
         {/* 8. Final Production Architecture (cd_12) */}
         <section className="grid md:grid-cols-12 gap-12 items-center">
           <div className="md:col-span-6">
-            <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
               <ImageIcon className="text-blue-600" /> Final Production Architecture
             </h2>
-            <div className="prose dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
+                <div className="prose prose-sm dark:prose-invert text-gray-700 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
                 The final production solution used a three-part injection-molded gasket set (Top, Middle, Bottom) that reliably sealed a five-chip silicon stack without mechanical failure. This architecture provided stable compression, predictable flow distribution, and strong manufacturability at scale.
               </p>
@@ -415,7 +415,7 @@ export default function CellFEPage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-white font-medium text-lg">{img.caption}</p>
+                    <p className="text-white font-medium text-base">{img.caption}</p>
                   </div>
                 </motion.div>
               ))}
