@@ -29,7 +29,7 @@ const experiences = [
     type: "TPM",
     theme: "blue",
     icon: <Brain size={18} />,
-    summary: "Drove cross-functional execution for the Tesla Model-Y door-hinge automation line, managing system architecture, mechanical integration, and vendor coordination on a $10M program under tight timelines.",
+    summary: "Owned cross-functional execution for the Tesla Model-Y door-hinge automation line, managing system architecture, mechanical integration, and vendor coordination on a $10M program under tight timelines.",
     description: [
       "Resolved a critical project bottleneck by creating a regression-based machining offset model, correcting tolerancing issues, reducing machining range by 25%, and ensuring contractual compliance.",
       "Built a custom coded framework with weighted task tracking and velocity charts, enabling clear definition of new work and accurate week-over-week progress tracking during system integration.",
@@ -41,7 +41,7 @@ const experiences = [
   {
     id: "cellfe",
     company: "Cell Fluidics Engineering",
-    role: "Mechanical Engineer",
+    role: "Product Development Engineer",
     period: "Mar 2023 - Feb 2025",
     location: "San Francisco Bay Area",
     type: "Engineering",
