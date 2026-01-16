@@ -48,7 +48,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 md:mb-6 max-w-3xl mx-auto px-4 leading-relaxed flex-shrink-0"
         >
-          Hardware Product Engineering and Technical Program Leadership
+          Hardware Product Engineering and Technical Program Leadership, delivering end-to-end systems from concept through production.
         </motion.p>
 
         <motion.div
