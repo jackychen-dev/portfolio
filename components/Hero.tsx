@@ -38,7 +38,7 @@ export default function Hero() {
             Jacky Chen
           </h1>
           <h2 className="text-base sm:text-lg md:text-xl lg:text-3xl xl:text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-2 sm:mb-2 md:mb-3 px-2">
-            Technical Program Manager & Engineer
+            Technical Program Manager | Former Hardware Product Engineer
           </h2>
         </motion.div>
 
@@ -48,7 +48,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 md:mb-6 max-w-3xl mx-auto px-4 leading-relaxed flex-shrink-0"
         >
-          Hardware Product Engineering and Technical Program Leadership, delivering end-to-end systems from concept through production.
+          Hardware product engineer turned TPM, leading complex electromechanical systems from concept through production.
         </motion.p>
 
         <motion.div
